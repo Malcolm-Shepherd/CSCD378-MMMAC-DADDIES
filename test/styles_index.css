@@ -1,0 +1,14 @@
+:root{
+    --macBeige: #F7EFE5;
+    --macPurple: #674188;
+    --macWhite: #FFFBf5;
+}
+body {
+    background-color: var(--macBeige);
+}
+h1 {
+    padding: 30px;
+    background-color: var(--macPurple);
+    color: var(--macWhite);
+    font-size: larger;
+}
