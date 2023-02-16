@@ -13,3 +13,6 @@ h1 {
     color: var(--macWhite);
     font-size: larger;
 }
+.macBackground {
+    width: 500pc;
+}
