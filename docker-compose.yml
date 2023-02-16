@@ -1,7 +1,7 @@
 services:
   # This is the main Apache http server for the site. It picks up html and the
   # like from ./site and creates an http server at localhost:8080 (check it out
-  # in your web browser). I
+  # in your web browser).
   php-apache:
     image: php:8.2.2-apache-bullseye
     ports:
@@ -10,11 +10,12 @@ services:
       - ./site:/var/www/html
 
   # This is the MySQL server, provided by MariaDB. It creates a database called
-  # 'SiteDB' and a user 'site' with password 'site'. I also exposed the MySQL
+  # 'sitedb' and a user 'site' with password 'site'. I also exposed the MySQL
   # server at localhost:8306.
   mariadb:
     image: mariadb:10.10.3-jammy
-    ports: 8306:3306
+    ports:
+      - 8306:3306
     volumes:
       - ./mysql:/var/lib/mysql
     environment:
