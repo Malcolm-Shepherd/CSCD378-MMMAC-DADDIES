@@ -2,6 +2,7 @@
     --macBeige: #F7EFE5;
     --macPurple: #674188;
     --macWhite: #FFFBf5;
+    --macLavender: #C3ACD0;
 }
 body {
     background-color: var(--macBeige);
