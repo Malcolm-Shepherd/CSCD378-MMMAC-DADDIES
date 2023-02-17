@@ -9,10 +9,41 @@ body {
 }
 h1 {
     padding: 30px;
-    background-color: var(--macPurple);
-    color: var(--macWhite);
+    background-color: var(--macLavender);
+    color: black;
     font-size: larger;
 }
 .macBackground {
     width: 500pc;
+}
+
+/* Navigation Header Test */
+#nav{
+    float: left;
+    width: 1200px;
+    height: 45px;
+    margin-top: 80px;
+    padding: 30px;
+    background-color: var(--macLavender);
+    color: black;
+    font-size: larger;
+}
+ul{
+    list-style: none;
+}
+ul li {
+    float: left;
+    padding: 0 10px;
+
+}
+ul li a{
+    padding: 0 10px;
+    height: 45px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+}
+ul li a:hover{
+    background: var(--macPurple);
+    color: var(--macWhite);
 }
