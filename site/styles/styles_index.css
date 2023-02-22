@@ -48,4 +48,17 @@ h1 {
     color: var(--macWhite);
 }
 
+.members {
+    float: left;
+    clear: both;
+}
+
+#MMMACteam p {
+    float: left;
+}
+
+#MMMACteam {
+    display: inline-block;
+}
+
 
