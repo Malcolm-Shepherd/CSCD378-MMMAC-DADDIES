@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="../styles/styles_index.css" rel="stylesheet">
+  <link href="../styles/styles_index.css" rel="stylesheet" >
+  <script src="register.js" defer></script>
   <meta charset="UTF-8">
   <title>MMMAC Daddies Join</title>
 </head>
@@ -43,10 +44,10 @@
 
 <form class="join">
   Choose what level of member want to become: <br><br>
-  <input type="radio" id="low" name="mem_level" value="low">
+  <input type="radio" id="low" name="mem_level" value="low" checked>
   <label for="low">Lowest Level</label><br><br>
 
-  <input type="radio" id="mid" name="mem_level" value="mid">
+  <input type="radio" id="mid" name="mem_level" value="mid" >
   <label for="mid">Middle Level</label><br><br>
 
   <input type="radio" id="high" name="mem_level" value="high">
@@ -66,8 +67,8 @@
 
   <label for="passCheck">Re-enter Password:</label>
   <input type="password" id="passCheck" name="passCheck"><br><br>
-
-  <input type="submit" value="Create Account">
+  <div id="formErrors"></div>
+  <input type="submit" id = "submit" value="Create Account">
 
 </form>
 
