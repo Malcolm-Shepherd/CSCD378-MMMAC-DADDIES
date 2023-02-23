@@ -45,7 +45,7 @@ h3 {
 /* Navigation Header Test */
 #nav{
     float: left;
-    width: 1200px;
+    width: 100%;
     height: 43px;
     padding: 30px;
     background-color: var(--macLavender);
