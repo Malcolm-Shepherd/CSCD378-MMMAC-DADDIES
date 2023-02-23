@@ -13,6 +13,9 @@ h1 {
     color: black;
     font-size: larger;
 }
+h3 {
+    font-size: x-large;
+}
 .macBackground {
     width: 500pc;
 }
@@ -60,6 +63,10 @@ h1 {
 
 #MMMACteam {
     display: inline-block;
+}
+.footer {
+    background-color: var(--macPurple);
+    padding: 50px;
 }
 
 
