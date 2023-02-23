@@ -7,88 +7,87 @@
   <title>MMMAC Daddies Join</title>
 </head>
 <body>
-<div class="header" id="nav">
-  <!-- Attempt at header links -->
-  <!--
-   How to do a Scroll header (mostly css and JavaScript)
-   https://www.w3schools.com/howto/howto_js_sticky_header.asp-->
-  <ul class="links">
-    <li><a href="../index.html"><img src="../images/TempLogoResized.png" alt="logo test" style="float: right;"></a></li>
-    <!--&nbsp is a whitespace to easily align the 2 words -->
-    <li><a href="../index.html"> MMMAC<br> &nbsp DADDIES</a></li>
-    <li><a href="shop.html">SHOP</a> </li>
-    <li><a href="login.html">LOGIN</a> </li>
-    <li><a href="join.html">JOIN</a> </li>
-    <li><a href="about.html">About Us</a> </li>
-    <li><a href="events.html">Events</a> </li>
-    <li><a href="contacts.html">Contacts</a> </li>
-    <li><a href="donate.html">Donate</a> </li>
-  </ul>
+  <div id="page-container">
+    <div id="content-wrap">
+      <div class="header" id="nav">
+        <!-- Attempt at header links -->
+        <!--
+         How to do a Scroll header (mostly css and JavaScript)
+         https://www.w3schools.com/howto/howto_js_sticky_header.asp-->
+        <ul class="links">
+          <li><a href="../index.html"><img src="../images/TempLogoResized.png" alt="logo test" style="float: right;"></a></li>
+          <!--&nbsp is a whitespace to easily align the 2 words -->
+          <li><a href="../index.html"> MMMAC<br> &nbsp DADDIES</a></li>
+          <li><a href="shop.html">SHOP</a> </li>
+          <li><a href="login.html">LOGIN</a> </li>
+          <li><a href="join.html">JOIN</a> </li>
+          <li><a href="about.html">About Us</a> </li>
+          <li><a href="events.html">Events</a> </li>
+          <li><a href="contacts.html">Contacts</a> </li>
+          <li><a href="donate.html">Donate</a> </li>
+        </ul>
+      </div>
 
-</div>
+      <!--This is a temp solution -->
+      <br><br><br><br><br>
 
+      <h2>
+        Join!
+      </h2>
+      <p>
+        We have not implemented a join function yet! We look forward to you joining us!
+      </p>
+      <p>
+        Free t-shirt for all new members!!
+      </p>
 
-<!--This is a temp solution -->
-<br><br><br><br><br>
+      <br><br>
 
+      <form class="join">
+        <!-- We can add this back if we decide to add it to the database -->
+        <!--Choose what level of member want to become: <br><br>
+        <input type="radio" id="low" name="mem_level" value="low" checked>
+        <label for="low">Lowest Level - $10 per year</label><br><br>
 
-<h2>
-  Join!
-</h2>
-<p>
-  We have not implemented a join function yet! We look forward to you joining us!
-</p>
-<p>
-  Free t-shirt for all new members!!
-</p>
+        <input type="radio" id="mid" name="mem_level" value="mid" >
+        <label for="mid">Middle Level - $20 per year</label><br><br>
 
-<br><br>
+        <input type="radio" id="high" name="mem_level" value="high">
+        <label for="high">Highest Level - $30 per year</label><br><br>
+        -->
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
 
-<form class="join">
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
 
-  <!-- We can add this back if we decide to add it to the database -->
-  <!--Choose what level of member want to become: <br><br>
-  <input type="radio" id="low" name="mem_level" value="low" checked>
-  <label for="low">Lowest Level - $10 per year</label><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
 
-  <input type="radio" id="mid" name="mem_level" value="mid" >
-  <label for="mid">Middle Level - $20 per year</label><br><br>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br><br>
 
-  <input type="radio" id="high" name="mem_level" value="high">
-  <label for="high">Highest Level - $30 per year</label><br><br>
-  -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
 
-  <label for="fname">First name:</label>
-  <input type="text" id="fname" name="fname"><br><br>
+        <label for="passCheck">Re-enter Password:</label>
+        <input type="password" id="passCheck" name="passCheck"><br><br>
+        <div id="formErrors"></div>
+        <input type="submit" id = "submit" value="Create Account">
 
-  <label for="lname">Last name:</label>
-  <input type="text" id="lname" name="lname"><br><br>
+      </form>
+    </div>
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email"><br><br>
-
-  <label for="username">Username:</label>
-  <input type="text" id="username" name="username"><br><br>
-
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password"><br><br>
-
-  <label for="passCheck">Re-enter Password:</label>
-  <input type="password" id="passCheck" name="passCheck"><br><br>
-  <div id="formErrors"></div>
-  <input type="submit" id = "submit" value="Create Account">
-
-</form>
-
-<div class="footer">
-  <ul class="links">
-    <li><a href="../index.html"><img src="../images/TempLogoResized.png" alt="logo test" style="float: right;"></a></li>
-    <!--&nbsp is a whitespace to easily align the 2 words -->
-    <li><a href="../index.html"> MMMAC<br> &nbsp DADDIES</a></li>
-    <li><a href="https://twitter.com/MMMAC_Daddies" target="_blank">Twitter</a></li>
-    <li><a href="https://www.facebook.com/profile.php?id=100090513312318" target="_blank">Facebook</a></li>
-    <li><a href="https://www.instagram.com/mmmac_daddies/" target="_blank">Instagram</a></li>
-  </ul>
-</div>
+      <div class="footer">
+        <ul class="links">
+          <li><a href="../index.html"><img src="../images/TempLogoResized.png" alt="logo test" style="float: right;"></a></li>
+          <!--&nbsp is a whitespace to easily align the 2 words -->
+          <li><a href="../index.html"> MMMAC<br> &nbsp DADDIES</a></li>
+          <li><a href="https://twitter.com/MMMAC_Daddies" target="_blank">Twitter</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=100090513312318" target="_blank">Facebook</a></li>
+          <li><a href="https://www.instagram.com/mmmac_daddies/" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+  </div>
 </body>
 </html>
