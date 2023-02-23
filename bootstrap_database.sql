@@ -39,5 +39,7 @@ create table events (
 create table attendance (
     user_id  int, -- not null, unique, auto increment by foreign key
     event_id int, -- not null, unique, auto increment by foreign key
+    foreign key (user_id) references accounts(user_id),
+    foreign key (event_id) references events(event_id),
     constraint pk_attendance primary key (user_id, event_id)
 );
