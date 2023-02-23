@@ -3,6 +3,7 @@ function checkForm() {
     const errors = [];
     const fName = document.getElementById("fname");
     const lName = document.getElementById("lname");
+    const email = document.getElementById("email");
     const userName = document.getElementById("username")
     const password = document.getElementById("password");
     const passwordCheck = document.getElementById("passCheck");
@@ -28,6 +29,17 @@ function checkForm() {
     else {
         lName.classList.remove("error");
     }
+    let emailRE = (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/);
+    if (emailRE.test(email.value) === false) {
+        errors.push("error");
+        const li = document.createElement("li");
+        li.textContent = "Invalid email address.";
+        error.appendChild(li);
+        email.classList.add("error");
+    }
+    else {
+        email.classList.remove("error");
+    }
     if (userName.value.length < 1) {
         errors.push("error");
         const li = document.createElement("li");
@@ -50,7 +62,7 @@ function checkForm() {
         password.classList.remove("error");
     }
 
-    if (password.value != passwordCheck.value ) {
+    if (password.value !== passwordCheck.value ) {
         errors.push("Password and confirmation password don't match.");
         const li = document.createElement("li");
         li.textContent = "Password and confirmation password don't match.";
