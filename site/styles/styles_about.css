@@ -13,8 +13,30 @@ h1 {
     color: black;
     font-size: larger;
 }
+h2 {
+    text-align: center;
+    font-size: x-large;
+    color: var(--macWhite);
+    background-color: var(--macPurple);
+    padding: 30px;
+}
 h3 {
     font-size: x-large;
+}
+#container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+}
+#container > div {
+    padding: 10px;
+    border: 5px var(--macPurple) solid;
+    background-color: #C3ACD0;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
 }
 .macBackground {
     width: 500pc;
@@ -45,24 +67,6 @@ h3 {
     text-decoration: none;
     text-align: center;
     font-weight: bolder;
-}
-.joinBanner {
-
-    background: black;
-    padding: 2px 15px 20px 15px;
-    margin: 10px 0;
-    color: var(--macWhite);
-}
-.banner{
-
-    display: flex;
-    flex-direction: row;
-}
-.banner img {
-    height: 100%;
-}
-.bannerInfo {
-    margin-left: 15px;
 }
 
 .header .links li a:hover{
