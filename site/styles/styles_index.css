@@ -64,6 +64,13 @@ h3 {
 .bannerInfo {
     margin-left: 15px;
 }
+.banner .button{
+    font: bold 20px Arial;
+    text-decoration: none;
+    background-color: var(--macPurple);
+    color: var(--macWhite);
+    padding: 10px 60px;
+}
 
 .header .links li a:hover{
     background: var(--macPurple);
