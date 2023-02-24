@@ -48,13 +48,12 @@ h3 {
 }
 .joinBanner {
 
-    background: black;
-    padding: 2px 15px 20px 15px;
+    background-image: url("../images/SadMacBW.jpg");
+    padding: 20px 150px 200px 150px;
     margin: 10px 0;
     color: var(--macWhite);
 }
 .banner{
-
     display: flex;
     flex-direction: row;
 }
@@ -62,7 +61,14 @@ h3 {
     height: 100%;
 }
 .bannerInfo {
-    margin-left: 15px;
+    margin-right: 0;
+    margin-left: auto;
+}
+#together{
+    font: bold 50px Arial;
+}
+.bannerInfo p{
+    font: 20px Arial;
 }
 .banner .button{
     font: bold 20px Arial;
@@ -70,6 +76,7 @@ h3 {
     background-color: var(--macPurple);
     color: var(--macWhite);
     padding: 10px 60px;
+    border-radius: 10px;
 }
 
 .header .links li a:hover{
