@@ -104,4 +104,23 @@ h3 {
     padding-bottom: 15.5rem;
 }
 
+.shirts {
+    float: left;
+    clear: both;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+}
+#container > div {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+}
+
 
