@@ -34,15 +34,24 @@ h3 {
     background-color: var(--macLavender);
     color: black;
     font-size: larger;
-}
-.links{
-    list-style: none;
-}
-.links li {
-    float: left;
-    padding: 0 10px;
+
+    margin-bottom: 20px;
+    position: absolute;
+    top: 0;
+
 
 }
+.links{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.links li {
+    display: inline;
+    float: left;
+    padding: 0 10px;
+}
+
 .links li a{
     padding: 0 10px;
     height: 45px;
@@ -56,7 +65,7 @@ h3 {
 }
 .banner {
     background-image: url("../images/SadMacBW.jpg");
-    background-position: center center;
+    background-position: center right;
     padding: 20px 150px 200px 150px;
     margin: 10px 0;
     color: var(--macWhite);
@@ -115,6 +124,7 @@ h3 {
 }
 .footer li a {
     margin-bottom: auto;
+    color: var(--macWhite);
 }
 
 #page-container {
