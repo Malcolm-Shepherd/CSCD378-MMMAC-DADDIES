@@ -24,3 +24,6 @@ https://docs.google.com/document/d/1SEXQOUOnqvR8UjSldgQrwwWQ3VcshI9mnensLOz_znU/
 
 ### WCAG Accessibility Presentation
 https://docs.google.com/presentation/d/11RbkNezMU3w0t5L0gET9dWeVDy3YUrvb3hGvLI40_0I
+
+### Final Writeup/goals/milestones/userguide
+https://docs.google.com/document/d/1UySbRDEydeToefwt8JGMHpq_POxUOwkTRItkDZsSvRo/edit?usp=sharing
