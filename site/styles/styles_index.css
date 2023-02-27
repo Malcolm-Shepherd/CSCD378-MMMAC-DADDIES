@@ -30,7 +30,7 @@ h3 {
     float: left;
     width: 100%;
     height: 43px;
-    padding: 30px;
+    padding: 30px 0;
     background-color: var(--macLavender);
     color: black;
     font-size: larger;
@@ -115,7 +115,7 @@ h3 {
 }
 .footer {
     background-color: var(--macPurple);
-    padding: 60px;
+    padding: 60px 0;
     position: absolute;
     bottom: 0;
     width: 100%;
