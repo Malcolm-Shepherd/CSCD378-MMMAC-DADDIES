@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 :root{
     --macBeige: #F7EFE5;
     --macPurple: #674188;
@@ -46,11 +49,14 @@ h3 {
     gap: 10px;
     justify-content: center;
     text-align: center;
+    margin: 0 auto;
 }
 .container > div {
     padding: 10px;
     text-align: center;
     font-size: larger;
+    background-color: #C3ACD0;
+
 }
 
 .macBackground {
@@ -121,5 +127,15 @@ h3 {
 
 #content-wrap {
     padding-bottom: 15.5rem;
+}
+
+
+.headerfont {
+    font-family: 'Montserrat', serif;
+}
+
+.font {
+    font-family: 'Lato', serif;
+
 }
 
