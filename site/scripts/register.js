@@ -9,6 +9,7 @@ function checkForm() {
     const passwordCheck = document.getElementById("passCheck");
     const error = document.getElementById("formErrors");
     error.innerHTML = "";
+
     if (fName.value.length < 1) {
         errors.push("Missing first name.");
         const li = document.createElement("li");

@@ -23,7 +23,7 @@ h2 {
 h3 {
     font-size: x-large;
 }
-#container {
+/*#container {
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -37,7 +37,24 @@ h3 {
     text-align: center;
     font-weight: bold;
     font-size: larger;
+} */
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+    position: relative;
 }
+.container > div {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    position: relative;
+}
+
 .macBackground {
     width: 500pc;
 }
