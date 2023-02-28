@@ -1,20 +1,23 @@
 {
-    "name": "mmmac-daddies",
-    "version": "1.0.0",
-    "description": "Server-side scripts for the MMMAC Daddies website.",
-    "main": "main.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node main.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Malcolm-Shepherd/CSCD378-MMMAC-DADDIES.git"
-    },
-    "author": "MMMAC Daddies",
-    "license": "0BSD",
-    "bugs": {
-        "url": "https://github.com/Malcolm-Shepherd/CSCD378-MMMAC-DADDIES/issues"
-    },
-    "homepage": "https://github.com/Malcolm-Shepherd/CSCD378-MMMAC-DADDIES#readme"
+  "name": "mmmac-daddies",
+  "version": "1.0.0",
+  "description": "Server-side scripts for the MMMAC Daddies website.",
+  "main": "main.js",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Malcolm-Shepherd/CSCD378-MMMAC-DADDIES.git"
+  },
+  "author": "MMMAC Daddies",
+  "license": "0BSD",
+  "bugs": {
+    "url": "https://github.com/Malcolm-Shepherd/CSCD378-MMMAC-DADDIES/issues"
+  },
+  "homepage": "https://github.com/Malcolm-Shepherd/CSCD378-MMMAC-DADDIES#readme"
 }
