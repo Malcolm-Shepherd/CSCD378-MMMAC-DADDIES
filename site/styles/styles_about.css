@@ -40,19 +40,17 @@ h3 {
 } */
 
 .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto;
     flex-direction: row;
     gap: 10px;
     justify-content: center;
     text-align: center;
-    position: relative;
 }
 .container > div {
     padding: 10px;
     text-align: center;
-    font-weight: bold;
     font-size: larger;
-    position: relative;
 }
 
 .macBackground {
