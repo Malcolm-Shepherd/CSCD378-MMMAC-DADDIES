@@ -3,7 +3,10 @@
 <head>
     <link href="styles/styles_index.css" rel="stylesheet">
     <meta charset="UTF-8">
-    <script src="../scripts/jquery-3.6.3.js"></script>
+    <script src="scripts/jquery-3.6.3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://malsup.github.io/jquery.cycle2.js"></script>
+    <script src="scripts/index_scripts.js"></script>
     <title>MMMAC Daddies</title>
 </head>
 <body>
@@ -34,13 +37,19 @@
 
         <!-- The "We're Working Together" banner shown in Figma_Computer_Ver.png -->
         <section class="joinBanner">
-            <div id="banner" class="banner">
+            <div id="banner" class="cycle-slideshow" data-cycle-slides="> img"
+                data-cycle-fx="scrollHorz"
+                data-cycle-speed="3000"
+                data-cycle-timeout="4000">
+                <img src="images/SadMacBW.jpg" alt="sad macaroni background">
+                <img src="images/SadMacaronsBW.jpg" alt="sad macaroon background">
                 <!-- <img src="images/sadMac.png" alt="sad image of macaroni" width="500"> -->
-                <div class="bannerInfo">
-                    <p id="together"> We're Working Together</p>
-                    <p> We are working together to help all MAC items in need. </p>
-                    <p><a href="html/join.html" class="button"> Join Now</a></p>
-                </div>
+
+            </div>
+            <div class="bannerInfo">
+                <p id="together"> We're Working Together</p>
+                <p> We are working together to help all MAC items in need. </p>
+                <p><a href="html/join.html" class="button"> Join Now</a></p>
             </div>
         </section>
 
