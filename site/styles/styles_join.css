@@ -19,33 +19,55 @@ h3 {
 .macBackground {
     width: 500pc;
 }
-
-/* Navigation Header Test */
+/* Navigation Header*/
 #nav{
+    font-family: "Montserrat", Serif;
     float: left;
     width: 100%;
     height: 43px;
-    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 50px;
     background-color: var(--macLavender);
     color: black;
     font-size: larger;
+
+    margin-bottom: 20px;
+    position: absolute;
+    top: 0;
 }
 .links{
-    list-style: none;
-}
-.links li {
-    float: left;
-    padding: 0 10px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 
 }
+.links li {
+    display: inline;
+    float: left;
+    padding: 20px 0;
+}
+
 .links li a{
-    padding: 0 10px;
-    height: 45px;
+    padding: 20px 20px;
+    height: 35px;
     color: black;
     text-decoration: none;
     text-align: center;
     font-weight: bolder;
 }
+.logo{
+    padding-top: 0 !important;
+}
+.page a:hover{
+    background: var(--macPurple);
+    color: white !important;
+}
+.active{
+    color: var(--macWhite) !important;
+    background-color: var(--macPurple);
+}
+
+
 .joinBanner {
 
     background: black;
@@ -102,6 +124,7 @@ h3 {
 
 #content-wrap {
     padding-bottom: 15.5rem;
+    padding-top: 120px;
 }
 
 
