@@ -24,9 +24,6 @@
       </div>
 
 
-      <!--This is a temp solution -->
-      <br><br><br><br><br>
-
       <h2>
         Login!
       </h2>
@@ -35,18 +32,26 @@
       </p>
 
       <form class="login">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username"><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Login">
+        <label for="username">Username</label>
+        <input type="text" placeholder="Enter Username" id="username" name="username" required><br><br>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter Password" id="password" name="password" required><br><br>
+        <button type="submit">Login</button>
         <br><br>
-        Don't have an account? Make one here!
-        <br>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+        <br><br>
 
-        <a href="join.html" id="createButton">Create Account</a>
+        <div class="container">
+          Don't have an account? Make one here!
+          <br>
+          <a href="join.html" id="createButton">Create Account</a>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
 
       </form>
+
     </div>
 
       <div class="footer">
