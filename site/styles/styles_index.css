@@ -109,6 +109,7 @@ h3 {
     z-index: 5;
     padding: 20px 150px 200px 150px;
 
+
 }
 #together{
     font: bold 50px 'Montserrat';
@@ -116,6 +117,13 @@ h3 {
 .bannerInfo p{
     font: 20px 'Montserrat';
     z-index: 5;
+
+}
+#togetherText{
+    background-color: black;
+    border-radius: 80px;
+    padding: 10px 30px;
+    text-align: center;
 }
 .button{
     font: bold 20px 'Montserrat';
@@ -125,6 +133,7 @@ h3 {
     padding: 10px 60px;
     border-radius: 10px;
     z-index: 6;
+
 }
 
 .members {
