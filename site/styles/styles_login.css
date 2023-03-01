@@ -74,6 +74,7 @@ h3 {
 /* End Navigation Header*/
 
 
+
 /* Login Form 5.6 Zybooks */
 form {
     border: 3px solid var(--macPurple);
@@ -97,6 +98,19 @@ button{
     border: none;
     cursor: pointer;
     width: 100%;
+}
+button:hover {
+    opacity: 0.8;
+}
+.container {
+    padding: 16px;
+}
+span{
+    display: inline;
+}
+span.psw {
+    float: right;
+    padding-top: 16px;
 }
 
 
