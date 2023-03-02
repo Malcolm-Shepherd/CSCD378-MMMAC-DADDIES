@@ -2,8 +2,12 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-    res.send('Hello, world!');
+router.post('/', function(req, res, next) {
+    let message = req.body["testInput"];
+    for (let key in req.body) {
+        console.log(req.body[key]);
+    }
+    res.send(`Hello, world! You entered ${message}.`);
 });
 
 module.exports = router;
