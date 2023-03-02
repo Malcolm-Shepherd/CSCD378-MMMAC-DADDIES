@@ -83,9 +83,17 @@ form {
     padding: 30px 0;
     background-color: var(--macLavender);
 }
-.title{
+form p{
     text-align: center;
-    font-family: "Monserrat", Serif;
+    font-family: "Montserrat", Serif;
+    font-size: 30px;
+}
+.text{
+    font-size: 15px !important;
+}
+
+form label{
+    font-family: "Montserrat", Serif;
 }
 input[type=text], input[type=password]{
     width: 100%;
@@ -95,8 +103,13 @@ input[type=text], input[type=password]{
     border: 1px solid var(--macPurple);
     box-sizing: border-box;
 }
+form .remember{
+    margin-left: 37%;
+}
 button{
     background-color: var(--macPurple);
+    font-family: "Montserrat", Serif;
+    font-size: large;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -110,8 +123,21 @@ button:hover {
 .container {
     padding: 16px;
 }
-span{
-    display: inline;
+.create{
+    text-align: center;
+    padding-bottom: 10px;
+}
+.create a{
+    padding: 5px 5px;
+    background-color: var(--macPurple);
+    color: var(--macWhite);
+    font-family: "Montserrat", Serif;
+    text-decoration: none;
+    border-radius: 10px;
+
+}
+.create a:hover{
+    opacity: 0.8;
 }
 span.psw {
     float: right;
@@ -141,7 +167,7 @@ span.psw {
 }
 
 #content-wrap {
-    padding-bottom: 15.5rem;
-    padding-top: 120px;
+    padding-bottom: 300px;
+    padding-top: 170px;
 }
 
