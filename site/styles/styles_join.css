@@ -107,6 +107,81 @@ h3 {
 }
 
 
+form {
+    border: 3px solid var(--macPurple);
+    border-radius: 20px;
+    margin: 0 35%;
+    padding: 30px 0;
+    background-color: var(--macLavender);
+}
+form p{
+    text-align: center;
+    font-family: "Montserrat", Serif;
+    font-size: 30px;
+}
+.text{
+    font-size: 15px !important;
+}
+
+form label{
+    font-family: "Montserrat", Serif;
+}
+input[type=text], input[type=password], input[type=email]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid var(--macPurple);
+    box-sizing: border-box;
+}
+form .remember{
+    margin-left: 37%;
+}
+button{
+    background-color: var(--macPurple);
+    font-family: "Montserrat", Serif;
+    font-size: large;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+button:hover {
+    opacity: 0.8;
+}
+.container {
+    padding: 16px;
+}
+.create{
+    text-align: center;
+    padding-bottom: 10px;
+}
+.create a{
+    padding: 5px 5px;
+    background-color: var(--macPurple);
+    color: var(--macWhite);
+    font-family: "Montserrat", Serif;
+    text-decoration: none;
+    border-radius: 10px;
+
+}
+.create a:hover{
+    opacity: 0.8;
+}
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+#formErrors{
+    font-family: "Montserrat", Serif;
+}
+
+
+
+
+
 
 .footer {
     background-color: var(--macPurple);
