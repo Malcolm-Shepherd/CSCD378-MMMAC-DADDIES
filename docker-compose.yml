@@ -46,5 +46,5 @@ services:
     volumes:
       - ./node:/home/node/app
     ports:
-      - 8082:8082
+      - 8082:3000
     command: npm start
