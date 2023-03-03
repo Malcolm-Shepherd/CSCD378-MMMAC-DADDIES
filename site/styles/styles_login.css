@@ -142,11 +142,11 @@ span.psw {
     float: right;
     padding-top: 16px;
 }
+/* Login Form End */
 
 
 
-
-
+/* Footer */
 .footer {
     background-color: var(--macPurple);
     padding: 10px 0;
@@ -167,6 +167,8 @@ span.psw {
     display: inline;
     float: left;
 }
+/* Footer End */
+
 
 #page-container {
     position: relative;
