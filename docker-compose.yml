@@ -34,3 +34,17 @@ services:
       - 'mariadb:db'
     ports:
       - 8081:80
+
+  # Node will provide server-side services that handle important things like
+  # database interactions.
+  node:
+    image: node:19.7.0-alpine3.17
+    user: node
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./node:/home/node/app
+    ports:
+      - 8082:3000
+    command: npm start
