@@ -4,7 +4,7 @@ CSCD378 Final Project
 ## Setup
   1. Clone the repository.
   2. Run `npm install` from the `node/` directory in order to initialize the
-     Node project and install dependenciesp.
+     Node project and install dependencies.
   3. Make sure that [Docker Compose](https://docs.docker.com/compose/) is
      available, and make sure that the Docker daemon is running.
   4. Run Docker Compose on the project directory to set up the Docker
