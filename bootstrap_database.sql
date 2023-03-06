@@ -1,7 +1,7 @@
 create table accounts (
     user_id  int         auto_increment, -- not null, unique by primary key
     username varchar(25) not null,
-    password char(128)   not null,
+    password char(60)    not null,
     primary key (user_id),
     unique (username)
 );
