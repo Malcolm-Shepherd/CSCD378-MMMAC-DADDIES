@@ -43,3 +43,11 @@ create table attendance (
     foreign key (event_id) references events(event_id),
     constraint pk_attendance primary key (user_id, event_id)
 );
+
+-- user "root" password "root"
+insert into accounts (username, password)
+values ("root", "$2a$10$kE9qg/GLYf8AALD7gn7/9uua2LAwDOsGTd67pPzI6eGRj3iOz1wGu");
+
+-- user "testuser" password "testpass"
+insert into accounts (username, password)
+values ("testuser", "$2a$10$jARaZ.Q/Gq24itrkWFpSnuJyxcyclDM0CaoSjzd9oNZR4ZwSZEbUm")
