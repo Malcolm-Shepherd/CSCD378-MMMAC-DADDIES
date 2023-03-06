@@ -1,34 +1,41 @@
-var express = require('express');
-var router = express.Router();
-var mysql = require('mysql');
-const crypto = require('crypto');
+const bcrypt = require('bcrypt');
+const express = require('express');
+const mysql = require('mysql');
+const router = express.Router();
+const con = mysql.createConnection({
+    host: "mariadb",
+    port: "3306",
+    user: "root",
+    password: "root",
+    database: "sitedb"
+});
 
-/* GET users listing. */
+// Login API handler.
 router.post('/', function(req, res, next) {
-
-    let Username = req.body["username"];
-    let password = req.body["password"];
+    const username = req.body["username"];
+    const password = req.body["password"];
+    // Spy on the result.
     for (let key in req.body) {
         console.log(req.body[key]);
     }
-    //res.send(`Hello, world! You entered ${Username} ${password}`);
-
-    let hash = crypto.createHash('sha512').update(password).digest('hex');
-
-    var con = mysql.createConnection({
-        host: "mariadb",
-        port: "3306",
-        user: "root",
-        password: "root",
-        database: "sitedb"
-    });
-
+    // Query database for user.
     con.connect(function(err) {
         if (err) throw err;
-        let query = "SELECT * FROM accounts WHERE username=? and password=?";
-        con.query(query, [Username, hash], function (err, result) {
+        const query = "select * from accounts where username=?;";
+        con.query(query, [username], function (err, result) {
             if (err) throw err;
             console.log(result);
+            // Verify result exists.
+            if (result[0].password) {
+                // Verify password hash.
+                bcrypt.compare(password, result[0].password,
+                               function(err, success) {
+                                   if (success)
+                                       res.send("Authentication successful!");
+                                   else
+                                       res.send("Invalid Credentials.");
+                });
+            }
         });
     });
 });
