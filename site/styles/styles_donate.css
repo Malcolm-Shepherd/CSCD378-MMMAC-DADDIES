@@ -31,7 +31,7 @@ h3 {
     width: 500pc;
 }
 
-/* Navigation Header*/
+/* Navigation Header */
 #nav{
     font-family: "Montserrat", Serif;
     float: left;
@@ -78,57 +78,34 @@ h3 {
     color: var(--macWhite) !important;
     background-color: var(--macPurple);
 }
-
-
-.joinBanner {
-
-    background: black;
-    padding: 2px 15px 20px 15px;
-    margin: 10px 0;
-    color: var(--macWhite);
-}
-.banner{
-
-    display: flex;
-    flex-direction: row;
-}
-.banner img {
-    height: 100%;
-}
-.bannerInfo {
-    margin-left: 15px;
-}
-
-
-.members {
-    float: left;
-    clear: both;
-}
-
-#MMMACteam p {
-    float: left;
-
-}
-
-#MMMACteam {
-    display: inline-block;
-}
+/* Navigation Header End */
 
 
 
 
+
+/* Footer */
 .footer {
     background-color: var(--macPurple);
-    padding: 60px;
+    padding: 10px 0;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 2.5rem;
-
+    font-family: "Montserrat", Serif;
 }
 .footer li a {
-    margin-bottom: auto;
+    color: var(--macWhite) !important;
+
+    padding: 10px 10px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bolder;
 }
+.footer li {
+    display: inline;
+    float: left;
+}
+/* Footer End */
 
 #page-container {
     position: relative;

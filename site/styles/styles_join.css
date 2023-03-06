@@ -30,7 +30,9 @@ h3 {
 .macBackground {
     width: 500pc;
 }
-/* Navigation Header*/
+
+
+/* Navigation Header */
 #nav{
     font-family: "Montserrat", Serif;
     float: left;
@@ -77,56 +79,109 @@ h3 {
     color: var(--macWhite) !important;
     background-color: var(--macPurple);
 }
+/* Navigation Header End */
 
 
-.joinBanner {
 
-    background: black;
-    padding: 2px 15px 20px 15px;
-    margin: 10px 0;
-    color: var(--macWhite);
+
+form {
+    border: 3px solid var(--macPurple);
+    border-radius: 20px;
+    margin: 0 35%;
+    padding: 30px 0;
+    background-color: var(--macLavender);
 }
-.banner{
-
-    display: flex;
-    flex-direction: row;
+form p{
+    text-align: center;
+    font-family: "Montserrat", Serif;
+    font-size: 30px;
 }
-.banner img {
-    height: 100%;
-}
-.bannerInfo {
-    margin-left: 15px;
-}
-
-
-.members {
-    float: left;
-    clear: both;
+.text{
+    font-size: 15px !important;
 }
 
-#MMMACteam p {
-    float: left;
-
+form label{
+    font-family: "Montserrat", Serif;
 }
-
-#MMMACteam {
+input[type=text], input[type=password], input[type=email]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
     display: inline-block;
+    border: 1px solid var(--macPurple);
+    box-sizing: border-box;
+}
+form .remember{
+    margin-left: 37%;
+}
+button{
+    background-color: var(--macPurple);
+    font-family: "Montserrat", Serif;
+    font-size: large;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+button:hover {
+    opacity: 0.8;
+}
+.container {
+    padding: 16px;
+}
+.create{
+    text-align: center;
+    padding-bottom: 10px;
+}
+.create a{
+    padding: 5px 5px;
+    background-color: var(--macPurple);
+    color: var(--macWhite);
+    font-family: "Montserrat", Serif;
+    text-decoration: none;
+    border-radius: 10px;
+
+}
+.create a:hover{
+    opacity: 0.8;
+}
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+#formErrors{
+    font-family: "Montserrat", Serif;
 }
 
 
 
+
+/* Footer */
 .footer {
     background-color: var(--macPurple);
-    padding: 60px;
+    padding: 10px 0;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 2.5rem;
-
+    font-family: "Montserrat", Serif;
 }
 .footer li a {
-    margin-bottom: auto;
+    color: var(--macWhite) !important;
+
+    padding: 10px 10px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bolder;
 }
+.footer li {
+    display: inline;
+    float: left;
+}
+/* Footer End */
+
+
 #page-container {
     position: relative;
     min-height: 100vh;

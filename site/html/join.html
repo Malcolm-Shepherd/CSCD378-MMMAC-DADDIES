@@ -1,9 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <link href="../styles/styles_join.css" rel="stylesheet" >
-  <script src="../scripts/register.js" defer></script>
-  <script src="../scripts/jquery-3.6.3.js"></script>
   <meta charset="UTF-8">
   <title>MMMAC Daddies Join</title>
 </head>
@@ -37,7 +35,7 @@
 
       <br><br>
 
-      <form class="join">
+      <form action="http://localhost:8082/join" method="post">
         <!-- We can add this back if we decide to add it to the database -->
         <!--Choose what level of member want to become: <br><br>
         <input type="radio" id="low" name="mem_level" value="low" checked>
@@ -67,21 +65,19 @@
         <label for="passCheck">Re-enter Password:</label>
         <input type="password" id="passCheck" name="passCheck"><br><br>
         <div id="formErrors"></div>
-        <input type="submit" id = "submit" value="Create Account">
+        <button type="submit" id = "submit">Create Account</button>
 
       </form>
     </div>
 
-      <div class="footer">
-        <ul class="links">
-          <li><a href="../index.html"><img src="../images/TempLogoResized.png" alt="logo test" style="float: right;"></a></li>
-          <!--&nbsp is a whitespace to easily align the 2 words -->
-          <li><a href="../index.html"> MMMAC<br> &nbsp DADDIES</a></li>
-          <li><a href="https://twitter.com/MMMAC_Daddies" target="_blank">Twitter</a></li>
-          <li><a href="https://www.facebook.com/profile.php?id=100090513312318" target="_blank">Facebook</a></li>
-          <li><a href="https://www.instagram.com/mmmac_daddies/" target="_blank">Instagram</a></li>
-        </ul>
-      </div>
+    <div class="footer">
+      <ul>
+        <li><a href="../index.html"><img src="../images/LogoWhite.png" alt="MMMAC logo"></a></li>
+        <li><a href="https://twitter.com/MMMAC_Daddies" target="_blank"><img src="../images/Twitter.png" alt="Twitter"></a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=100090513312318" target="_blank"><img src="../images/Facebook.png" alt="Facebook"></a></li>
+        <li><a href="https://www.instagram.com/mmmac_daddies/" target="_blank"><img src="../images/Instagram.png" alt="Instagram"></a></li>
+      </ul>
+    </div>
   </div>
 </body>
 </html>
