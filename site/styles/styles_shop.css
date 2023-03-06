@@ -17,6 +17,13 @@ h1 {
     font-size: larger;
 
 }
+h2 {
+    text-align: center;
+    font-size: x-large;
+    color: var(--macWhite);
+    background-color: var(--macPurple);
+    padding: 30px;
+}
 h3 {
     font-size: x-large;
 }
@@ -161,3 +168,12 @@ a:active {
 }
 
 
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 15.5rem;
+    padding-top: 120px;
+}

@@ -180,14 +180,13 @@ span.psw {
 }
 /* Footer End */
 
-
 #page-container {
     position: relative;
     min-height: 100vh;
 }
 
 #content-wrap {
-    padding-bottom: 300px;
-    padding-top: 170px;
+    padding-bottom: 15.5rem;
+    padding-top: 120px;
 }
 
