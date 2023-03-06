@@ -28,7 +28,8 @@
         Login!
       </h2>
 
-      <form class="login">
+      <form class="login" action="http://localhost:8082/login" method="post">
+        <p><strong>Login</strong></p>
         <label for="username">Username</label>
         <input type="text" placeholder="Enter Username" id="username" name="username" required><br><br>
         <label for="password">Password</label>
@@ -36,17 +37,16 @@
         <button type="submit">Login</button>
         <br><br>
         <label>
-          <input type="checkbox" checked="checked" name="remember"> Remember me
+          <input class="remember" type="checkbox" name="remember"> Remember me
         </label>
         <br><br>
-
         <div class="container">
-          Don't have an account? Make one here!
-          <br>
-          <a href="join.html" id="createButton">Create Account</a>
-          <span class="psw">Forgot <a href="#">password?</a></span>
+          <div class="create">
+            <p class="text">Dont have an account? Make one here:</p>
+            <span class="create"></span><a href="join.html" id="createButton">Create Account</a></span>
+          </div>
+          <span class="psw">Forgot <a href="forgot-password.html">password?</a></span>
         </div>
-
       </form>
 
     </div>
