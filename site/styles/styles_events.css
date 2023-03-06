@@ -17,6 +17,13 @@ h1 {
     color: black;
     font-size: larger;
 }
+h2 {
+    text-align: center;
+    font-size: x-large;
+    color: var(--macWhite);
+    background-color: var(--macPurple);
+    padding: 30px;
+}
 h3 {
     font-size: x-large;
 }

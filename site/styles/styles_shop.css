@@ -9,13 +9,18 @@
 }
 body {
     background-color: var(--macBeige);
-
 }
 h1 {
     padding: 27px;
     background-color: var(--macLavender);
     font-size: larger;
-
+}
+h2 {
+    text-align: center;
+    font-size: x-large;
+    color: var(--macWhite);
+    background-color: var(--macPurple);
+    padding: 30px;
 }
 h3 {
     font-size: x-large;
@@ -26,7 +31,7 @@ h3 {
 
 /* Navigation Header*/
 #nav{
-    font-family: "Montserrat", Serif;
+    font-family: "Montserrat", serif;
     float: left;
     width: 100%;
     height: 43px;
@@ -127,6 +132,8 @@ h3 {
     justify-content: center;
     text-align: center;
     position: relative;
+    font-family: "Lato", serif;
+
 }
 .container > div {
     padding: 10px;
@@ -160,4 +167,14 @@ a:active {
     color: black;
 }
 
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 15.5rem;
+    padding-top: 120px;
+}
 

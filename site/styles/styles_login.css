@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-
 :root{
     --macBeige: #F7EFE5;
     --macPurple: #674188;
@@ -17,6 +16,13 @@ h1 {
     color: black;
     font-size: larger;
 }
+h2 {
+    text-align: center;
+    font-size: x-large;
+    color: var(--macWhite);
+    background-color: var(--macPurple);
+    padding: 30px;
+}
 h3 {
     font-size: x-large;
 }
@@ -26,7 +32,7 @@ h3 {
 
 /* Navigation Header*/
 #nav{
-    font-family: "Montserrat", Serif;
+    font-family: "Montserrat", serif;
     float: left;
     width: 100%;
     height: 43px;

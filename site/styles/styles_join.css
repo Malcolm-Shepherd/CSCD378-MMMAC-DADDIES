@@ -17,6 +17,13 @@ h1 {
     color: black;
     font-size: larger;
 }
+h2 {
+    text-align: center;
+    font-size: x-large;
+    color: var(--macWhite);
+    background-color: var(--macPurple);
+    padding: 30px;
+}
 h3 {
     font-size: x-large;
 }
@@ -130,5 +137,38 @@ h3 {
     padding-top: 120px;
 }
 
+form {
+    border: 3px solid var(--macPurple);
+    margin: 0 25%;
+    padding: 30px 0;
+    background-color: var(--macLavender);
+}
 
+label {
+    width: 50px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 20px;
+}
+
+input[type=text], input[type=email], input[type=password], select {
+    box-sizing: border-box;
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    align-content: center;
+    margin: auto;
+}
+
+input[type=submit] {
+    width: 200px;
+    background-color: #09f;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
