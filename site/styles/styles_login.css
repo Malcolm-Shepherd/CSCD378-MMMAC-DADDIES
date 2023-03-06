@@ -90,7 +90,7 @@ form {
 }
 form p{
     text-align: center;
-    font-family: "Montserrat", Serif;
+    font-family: "Montserrat", serif;
     font-size: 30px;
 }
 .text{
@@ -98,7 +98,7 @@ form p{
 }
 
 form label{
-    font-family: "Montserrat", Serif;
+    font-family: "Montserrat", serif;
 }
 input[type=text], input[type=password]{
     width: 100%;
@@ -113,7 +113,7 @@ form .remember{
 }
 button{
     background-color: var(--macPurple);
-    font-family: "Montserrat", Serif;
+    font-family: "Montserrat", serif;
     font-size: large;
     color: white;
     padding: 14px 20px;
@@ -139,7 +139,6 @@ button:hover {
     font-family: "Montserrat", Serif;
     text-decoration: none;
     border-radius: 10px;
-
 }
 .create a:hover{
     opacity: 0.8;
