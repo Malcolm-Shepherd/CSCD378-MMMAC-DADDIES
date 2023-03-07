@@ -48,6 +48,10 @@ h3 {
     position: absolute;
     top: 0;
 }
+form img {
+    height: 100px;
+    width: 100px;
+}
 .links{
     list-style-type: none;
     margin: 0;
@@ -81,6 +85,13 @@ h3 {
 }
 /* Navigation Header End */
 
+#macItemList li {
+    padding: 10px;
+    text-align: center;
+    font-size: larger;
+    background-color: #C3ACD0;
+
+}
 
 /* Footer */
 .footer {

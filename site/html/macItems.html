@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="../styles/styles_events.css" rel="stylesheet">
+    <link href="../styles/styles_macItems.css" rel="stylesheet">
     <meta charset="UTF-8">
+    <script src="../scripts/macItems_scripts.js"></script>
     <title>MMMAC Daddies Events</title>
 </head>
 <body>
@@ -26,9 +27,31 @@
         <h2>
             Items!
         </h2>
-        <p>
-            Look at our items!! Woooah!
-        </p>
+        <section>
+            <ul id="macItemList">
+                <li>
+                    <form id="item1Form">
+                        <img src="../images/closeupMac.png" alt="Avaialable Mac Item"><br>
+                        <input type="radio" id="item1Leave" name="AdoptableItem1" value="leaveItem1" checked>
+                        <label for="item1Leave">Leave Behind</label><br>
+                        <input type="radio" id="item1Adopt" name="AdoptableItem1" value="adoptItem1">
+                        <label for="item1Adopt">Adopt</label><br>
+                        <button type="submit">Submit</button>
+                    </form>
+                </li>
+                <li>
+                    <form id="item2Form">
+                        <img src="../images/M-macaron.png" alt="Avaialable Mac Item"><br>
+                        <input type="radio" id="item2Leave" name="AdoptableItem2" value="HTML" checked>
+                        <label for="item2Leave">Leave Behind</label><br>
+                        <input type="radio" id="item2Adopt" name="AdoptableItem2" value="adoptItem2">
+                        <label for="item2Adopt">Adopt</label><br>
+                        <button type="submit">Submit</button>
+                    </form>
+                </li>
+            </ul>
+            <button id="adminAddItem"><strong>Admin</strong>:Add Item</button>
+        </section>
     </div>
 
     <div class="footer">
