@@ -85,14 +85,22 @@ h3 {
 #contact{
     background-color: var(--macLavender);
     margin: 40px 100px;
-    padding: 0 70px;
+    padding: 0 0;
     font-family: "Montserrat", serif;
+    object-fit: scale-down;
+    display: flex;
+}
+.right{
+    margin-left: 50px ;
+
 }
 .left{
     float: right;
     margin-right: 70px;
     margin-top: 50px;
     text-align: center;
+    z-index: 6;
+    flex: 1;
 }
 .left h3{
     font-size: xxx-large;
@@ -102,6 +110,8 @@ h3 {
 #email{
     padding: 20px 0;
 }
+
+#more {display: none;}
 
 /* End Contact thing */
 
