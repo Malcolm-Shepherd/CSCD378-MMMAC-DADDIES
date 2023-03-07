@@ -6,14 +6,9 @@ const mysql = require('mysql');
 const router = express.Router();
 
 router.post('/', function(req, res, next) {
-    // Get request fields.
-    const username = req.body["username"];
-    const password = req.body["password"];
-
-    // Connect to database.
-    // I thought it would be nice to define con at the top of the file, but more
-    // than one login request does not work unless it is defined here. Hell if I
-    // know why that is.
+    // Connect to database.  I thought it would be nice to define con at the top
+    // of the file, but more than one login request does not work unless it is
+    // defined here. Hell if I know why that is.
     const con = mysql.createConnection({
         host: "mariadb",
         port: "3306",
@@ -22,40 +17,58 @@ router.post('/', function(req, res, next) {
         database: "sitedb"
     });
 
+    // Get request fields.
+    const req_user = req.body["username"];
+    const req_pass = req.body["password"];
+
+    // Connect to database.
     con.connect(function(err) {
         if (err) {
             console.log(`Database connection error: ${err.stack}`);
             return;
         }
-        // Query user.
+
+        // Query for user.
         const query = "select * from accounts where username=?;";
         con.query(
-            query, [username],
+            query, [req_user],
             function(err, result) {
                 if (err) {
                     console.log(`Database query error: ${err.stack}`);
                     return;
                 }
-                // Verify user exists.
+
+                // Verify that we received some result.
                 if (result.length > 0) {
+
+                    // Get query fields.
+                    const uid      = result[0].user_id;
+                    const username = result[0].username;
+                    const hash     = result[0].password;
+
                     // Verify password hash.
-                    const hash = result[0].password;
                     bcrypt.compare(
-                        password, hash,
+                        req_pass, hash,
                         function(err, success) {
                             if (err) {
                                 console.log(`Password verification error: ${err.stack}`);
                                 return;
                             }
                             if (success)
-                                res.send("Authentication successful!");
+                                // Verification successful!
+                                res.json({status: "ok",
+                                          uid: uid,
+                                          username: username,
+                                          hash: hash});
                             else
-                                res.send("Invalid password.");
+                                // Bad password.
+                                res.json({status: "badpass"});
                         }
                     );
                 }
                 else {
-                    res.send("User does not exist.");
+                    // No result, username is invalid.
+                    res.json({status: "baduser"});
                 }
             });
     });

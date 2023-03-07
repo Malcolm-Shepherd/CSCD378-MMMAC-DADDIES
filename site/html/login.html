@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <link href="../styles/styles_login.css" rel="stylesheet">
+  <script src="../scripts/jquery-3.6.3.js"></script>
+  <script src="../scripts/login.js"></script>
   <meta charset="UTF-8">
   <title>MMMAC Daddies Login</title>
 </head>
@@ -28,13 +30,13 @@
         Login!
       </h2>
 
-      <form class="login" action="http://localhost:8082/login" method="post">
+      <form class="login">
         <p><strong>Login</strong></p>
         <label for="username">Username</label>
         <input type="text" placeholder="Enter Username" id="username" name="username" required><br><br>
         <label for="password">Password</label>
         <input type="password" placeholder="Enter Password" id="password" name="password" required><br><br>
-        <button type="submit">Login</button>
+        <button id="login" type="submit">Login</button>
         <br><br>
         <label>
           <input class="remember" type="checkbox" name="remember"> Remember me
