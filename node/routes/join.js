@@ -1,18 +1,34 @@
-var express = require('express');
-var router = express.Router();
+const bcrypt = require('bcrypt');
+const express = require('express');
+const router = express.Router();
 
 /* GET users listing. */
 router.post('/', function(req, res, next) {
-    let fName = req.body["fname"];
-    let lName = req.body["lname"];
-    let email = req.body["email"];
-    let username = req.body["username"];
-    let password = req.body["password"];
-    let pass2 = req.body["passCheck"];
-    for (let key in req.body) {
-        console.log(req.body[key]);
-    }
-    res.send(`Hello, world! You entered \n ${fName} \n ${lName}\n ${email}\n ${username}\n ${password}\n ${pass2}.`);
+    // Get form fields.
+    const firstName = req.body["fname"];
+    const lastName  = req.body["lname"];
+    const email     = req.body["email"];
+    const username  = req.body["username"];
+    const password  = req.body["password"];
+    const password2 = req.body["passCheck"];
+
+    // Hash password using bcrypt.
+    bcrypt.hash(password, 10, function(err, hash) {
+        if (err) {
+            console.log(`Password hash error: ${err.stack}`);
+            return;
+        }
+        res.send(`
+You entered:
+${firstName}
+${lastName}
+${email}
+${username}
+${password}
+${password2}
+Password hash:
+${hash}`);
+    });
 });
 
 module.exports = router;
