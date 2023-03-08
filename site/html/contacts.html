@@ -3,7 +3,6 @@
 <head>
   <link href="../styles/styles_contacts.css" rel="stylesheet">
   <meta charset="UTF-8">
-  <script src="../scripts/contacts_script.js"></script>
   <title>MMMAC Daddies Contacts</title>
 </head>
 <body>
@@ -58,13 +57,13 @@
 
           <!-- <button onclick="myFunction(manager)" class="myBtn" id="manager"> > Project Manager </button>
           <span class="more"><br/> Michael Moran <br/> school email.edu</span> -->
-        <button onclick="show()" class="collapsible"> Project Manager </button>
+        <button type="button" class="collapsible"> Project Manager </button>
         <div class="content">
           <p>Michael Moran</p>
           <p>SchoolEmail@ewu.edu</p>
         </div>
 
-        <button onclick="show()" class="collapsible"> Back End Devs </button>
+        <button type="button" class="collapsible"> Back End Devs </button>
         <div class="content">
           <p>Cameron Norton</p>
           <p>SchoolEmail@ewu.edu</p>
@@ -72,13 +71,13 @@
           <p>SchoolEmail@ewu.edu</p>
         </div>
 
-        <button onclick="show()" class="collapsible"> UI Designer </button>
+        <button type="button" class="collapsible"> UI Designer </button>
         <div class="content">
           <p>Mikayla Stewart</p>
           <p>SchoolEmail@ewu.edu</p>
         </div>
 
-        <button onclick="show()" class="collapsible"> Front End Dev </button>
+        <button type="button" class="collapsible"> Front End Dev </button>
         <div class="content">
           <p>Alysha McCullough</p>
           <p>SchoolEmail@ewu.edu</p>
@@ -86,6 +85,24 @@
 
       </div>
 
+
+
+      <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+      </script>
 
 
       <!-- TEST
