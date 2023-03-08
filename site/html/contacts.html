@@ -19,7 +19,7 @@
           <li class="page" style="float:right"><a href="about.html">MMMeet the Team</a> </li>
           <li class="page" style="float:right"><a href="macItems.html">Items</a> </li>
           <li class="page" style="float:right"><a href="events.html">Events</a> </li>
-          <li class="page" style="float:right"><a class="active" href="contacts.html">Contacts</a> </li>
+          <li class="page" style="float:right"><a class="current" href="contacts.html">Contacts</a> </li>
           <li class="page" style="float:right"><a href="donate.html">Donate</a> </li>
         </ul>
       </div>
@@ -52,18 +52,55 @@
       </div>
 
 
-      <!-- Drop down idea: https://www.w3schools.com/howto/howto_js_read_more.asp -->
+      <!-- Read more button: https://www.w3schools.com/howto/howto_js_read_more.asp -->
+      <!-- Collapsable content: https://www.w3schools.com/howto/howto_js_collapsible.asp -->
       <div id="additional-contacts">
-        > Project Manager <br/>
-        > Back End Devs <br/>
-        > UI Designer  <br/>
-        > Front End Dev <br/>
+
+          <!-- <button onclick="myFunction(manager)" class="myBtn" id="manager"> > Project Manager </button>
+          <span class="more"><br/> Michael Moran <br/> school email.edu</span> -->
+        <button onclick="show()" class="collapsible"> Project Manager </button>
+        <div class="content">
+          <p>Michael Moran</p>
+          <p>SchoolEmail@ewu.edu</p>
+        </div>
+
+        <button onclick="show()" class="collapsible"> Back End Devs </button>
+        <div class="content">
+          <p>Cameron Norton</p>
+          <p>SchoolEmail@ewu.edu</p>
+          <p>Malcolm Shepherd</p>
+          <p>SchoolEmail@ewu.edu</p>
+        </div>
+
+        <button onclick="show()" class="collapsible"> UI Designer </button>
+        <div class="content">
+          <p>Mikayla Stewart</p>
+          <p>SchoolEmail@ewu.edu</p>
+        </div>
+
+        <button onclick="show()" class="collapsible"> Front End Dev </button>
+        <div class="content">
+          <p>Alysha McCullough</p>
+          <p>SchoolEmail@ewu.edu</p>
+        </div>
+
       </div>
 
-      <!-- TEST -->
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
 
-      <button onclick="myFunction()" id="myBtn">Read more</button>
+
+      <!-- TEST
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum,
+        nisi lorem egestas vitae scel
+        <span id="dots">...</span>
+        <span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor
+          vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum
+          dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus
+          gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span>
+      </p>
+
+      <button onclick="myFunction()" id="myBtn">Read more</button>  -->
+
 
       </div>
 
