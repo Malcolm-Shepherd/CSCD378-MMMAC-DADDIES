@@ -54,12 +54,17 @@ router.post('/', function(req, res, next) {
                                 console.log(`Password verification error: ${err.stack}`);
                                 return;
                             }
-                            if (success)
+                            if (success) {
                                 // Verification successful!
-                                res.json({status: "ok",
-                                          uid: uid,
-                                          username: username,
-                                          hash: hash});
+                                console.log("Login Success!");
+                                res.header("Access-Control-Allow-Origin", "*");
+                                res.json({
+                                    status: "ok",
+                                    uid: uid,
+                                    username: username,
+                                    hash: hash
+                                });
+                            }
                             else
                                 // Bad password.
                                 res.json({status: "badpass"});
