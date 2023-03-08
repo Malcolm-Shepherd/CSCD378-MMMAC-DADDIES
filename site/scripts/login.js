@@ -1,6 +1,18 @@
+function setCookie(name, value, expire_days) {
+    const d = new Date();
+    d.setTime(d.getTime() + (expire_days * 24 * 60 * 60 * 1000));
+    const expires = `expires=${d.toUTCString}`;
+    document.cookie = `${name}=${value};${expires};path=/`;
+}
+
 // Handle responses from Node image.
 function responseHandler(data) {
     console.log(data);
+    if (data.status == "ok") {
+        setCookie("uid", data.uid, 365);
+        setCookie("username", data.username, 365);
+        setCookie("hash", data.hash, 365);
+    }
 }
 
 // Wait until page loads.
