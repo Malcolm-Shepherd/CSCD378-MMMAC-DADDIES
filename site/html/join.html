@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <link href="../styles/styles_join.css" rel="stylesheet" >
+  <script src="../scripts/jquery-3.6.3.js"></script>
+  <script src="../scripts/join.js"></script>
   <meta charset="UTF-8">
   <title>MMMAC Daddies Join</title>
 </head>
@@ -29,16 +31,7 @@
 
       <br><br>
 
-      <form action="http://localhost:8082/join" method="post">
-        <!-- We can add this back if we decide to add it to the database -->
-        <!--Choose what level of member want to become: <br><br>
-        <input type="radio" id="low" name="mem_level" value="low" checked>
-        <label for="low">Lowest Level - $10 per year</label><br><br>
-        <input type="radio" id="mid" name="mem_level" value="mid" >
-        <label for="mid">Middle Level - $20 per year</label><br><br>
-        <input type="radio" id="high" name="mem_level" value="high">
-        <label for="high">Highest Level - $30 per year</label><br><br>
-        -->
+      <form>
         <label for="fname">First name</label>
         <input type="text" id="fname" name="fname" placeholder="first name" required><br><br>
 
@@ -58,7 +51,7 @@
         <input type="password" id="passCheck" name="passCheck" placeholder="re-enter password" required><br><br>
         <div id="formErrors"></div>
 
-        <button type="submit" id = "submit">Create Account</button>
+        <button type="submit" id="submit">Create Account</button>
 
         <br><br>
 
