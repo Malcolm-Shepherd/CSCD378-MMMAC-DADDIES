@@ -59,10 +59,6 @@ h3 {
 
 }
 
-.macBackground {
-    width: 500pc;
-}
-
 /* Navigation Header */
 #nav{
     font-family: "Montserrat", Serif;
@@ -124,8 +120,6 @@ h3 {
 #MMMACteam {
     display: inline-block;
 }
-
-
 .headerfont {
     font-family: 'Montserrat', serif;
 }
