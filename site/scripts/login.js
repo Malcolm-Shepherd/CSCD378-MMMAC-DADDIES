@@ -13,6 +13,9 @@ function responseHandler(data) {
         setCookie("uid", data.uid, 365);
         setCookie("username", data.username, 365);
         setCookie("hash", data.hash, 365);
+        document.getElementById("loginOrOut").innerText = "LOGOUT";
+        document.getElementById("joinOrUser").innerText = data.username;
+        alert("Login Success!");
     }
 }
 
