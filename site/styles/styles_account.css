@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+:root{
+    --macBeige: #F7EFE5;
+    --macPurple: #674188;
+    --macWhite: #FFFBf5;
+    --macLavender: #C3ACD0;
+}
+body {
+    background-color: var(--macBeige);
+}
+h1 {
+    padding: 27px;
+    background-color: var(--macLavender);
+    color: black;
+    font-size: larger;
+}
+h2 {
+    text-align: center;
+    font-size: x-large;
+    color: var(--macWhite);
+    background-color: var(--macPurple);
+    padding: 30px;
+}
+h3 {
+    font-size: x-large;
+}
+.macBackground {
+    width: 500pc;
+}
+
+/* Navigation Header */
+#nav{
+    font-family: "Montserrat", Serif;
+    float: left;
+    width: 100%;
+    height: 43px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    background-color: var(--macLavender);
+    color: black;
+    font-size: larger;
+
+    margin-bottom: 20px;
+    position: absolute;
+    top: 0;
+}
+.links{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+.links li {
+    display: inline;
+    float: left;
+    padding: 20px 0;
+}
+
+.links li a{
+    padding: 20px 20px;
+    height: 35px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bolder;
+}
+.logo{
+    padding-top: 0 !important;
+}
+.page a:hover{
+    background: var(--macPurple);
+    color: white !important;
+}
+.active{
+    color: var(--macWhite) !important;
+    background-color: var(--macPurple);
+}
+/* Navigation Header End */
+
+
+
+
+
+/* Footer */
+.footer {
+    background-color: var(--macPurple);
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-family: "Montserrat", Serif;
+}
+.footer li a {
+    color: var(--macWhite) !important;
+
+    padding: 10px 10px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bolder;
+}
+.footer li {
+    display: inline;
+    float: left;
+}
+/* Footer End */
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 15.5rem;
+    padding-top: 120px;
+}
+
+
