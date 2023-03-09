@@ -182,3 +182,29 @@ a:active {
     padding-bottom: 15.5rem;
     padding-top: 120px;
 }
+
+
+.eventBanner{
+    padding: 0 0 30px 0;
+}
+.banner {
+    background-image: url("https://i.imgur.com/kK0OigI.jpg");
+    background-position: center right;
+    padding: 20px 150px 200px 150px;
+    margin: 10px 0;
+    color: var(--macWhite);
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+}
+.banner img {
+    height: 100%;
+}
+.bannerInfo {
+    /*margin-right: 0;
+    margin-left: auto;*/
+    margin: auto auto -100px;
+}
+#shop {
+    font: bold 100px 'Montserrat', Serif;
+}

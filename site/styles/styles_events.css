@@ -149,9 +149,8 @@ h3 {
     font: bold 100px 'Montserrat', Serif;
 }
 .info {
-    margin-right: 220px;
-    margin-left: 220px;
-    padding-bottom: 70px;
+    width: 1140px;
+    margin: auto;
     font: 20px 'Lato', Serif;
 }
 hr.dotted {
