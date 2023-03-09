@@ -50,10 +50,8 @@ router.post('/', function(req, res, next) {
                     bcrypt.compare(
                         req_pass, hash,
                         function(err, success) {
-                            if (err) {
-                                console.log(`Password verification error: ${err.stack}`);
-                                return;
-                            }
+                            // Password hashing should never fail, so throw if it does.
+                            if (err) throw err;
                             if (success) {
                                 // Verification successful!
                                 console.log("Login Success!");

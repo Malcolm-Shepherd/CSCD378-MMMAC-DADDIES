@@ -32,11 +32,8 @@ router.post('/', function(req, res, next) {
 
         // Hash password using bcrypt.
         bcrypt.hash(password, 10, function(err, hash) {
-            if (err) {
-                console.log(`Password hash error: ${err.stack}`);
-                res.json({status: "error"});
-                return;
-            }
+            // Password hashing should never fail so throw if it does.
+            if (err) throw err;
 
             // Try to insert username and password into accounts table.
             const query = "insert into accounts (username, password) values (?, ?);";
