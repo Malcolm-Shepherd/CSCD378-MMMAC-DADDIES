@@ -1,4 +1,3 @@
-
 function setCookie(name, value, expire_days) {
     const d = new Date();
     d.setTime(d.getTime() + (expire_days * 24 * 60 * 60 * 1000));
@@ -10,12 +9,17 @@ function setCookie(name, value, expire_days) {
 function responseHandler(data) {
     console.log(data);
     if (data.status == "ok") {
+        $("#formErrors")[0].innerHTML = "";
         setCookie("uid", data.uid, 365);
         setCookie("username", data.username, 365);
         setCookie("hash", data.hash, 365);
         document.getElementById("loginOrOut").innerText = "LOGOUT";
         document.getElementById("joinOrUser").innerText = data.username;
         alert("Login Success!");
+        window.location.href = "http://localhost:8080";
+    }
+    else {
+        $("#formErrors")[0].innerHTML = "<p>Invalid username or password</p>";
     }
 }
 
