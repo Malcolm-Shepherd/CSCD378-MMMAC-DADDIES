@@ -112,6 +112,10 @@ h3 {
 /* This was for the read more button and isn't necessary anymore */
 /*#more {display: none;}
 .more{display: none;}*/
+h3{
+    font-family: "Montserrat", serif;
+    margin-left: 10%;
+}
 
 #additional-contacts{
     padding: 18px;
