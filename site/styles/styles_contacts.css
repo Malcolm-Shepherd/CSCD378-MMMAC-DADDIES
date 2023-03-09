@@ -109,12 +109,26 @@ h3 {
 #email{
     padding: 20px 0;
 }
+#email a{
+    padding: 10px;
+}
+#contact ul{
+    list-style-type: none;
+}
+#contact ul li{
+    display: inline;
+    padding: 10px;
+}
+
 /* This was for the read more button and isn't necessary anymore */
 /*#more {display: none;}
 .more{display: none;}*/
 h3{
     font-family: "Montserrat", serif;
     margin-left: 10%;
+}
+#more{
+    padding-top: 30px;
 }
 
 #additional-contacts{
@@ -123,7 +137,6 @@ h3{
     width: 80%
 
 }
-
 /* Button that is used to open and close the collapsible content */
 .collapsible {
     background-color: var(--macLavender);
