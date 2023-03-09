@@ -2,7 +2,7 @@ function setCookie(name, value, expire_days) {
     const d = new Date();
     d.setTime(d.getTime() + (expire_days * 24 * 60 * 60 * 1000));
     const expires = `expires=${d.toUTCString}`;
-    document.cookie = `${name}=${value};${expires};path=/`;
+    document.cookie = `${name}=${value}; expires=Thu, 18 Dec 2023 12:00:00 UTC; path=/; SameSite=Strict`;
 }
 
 // Handle responses from Node image.
@@ -22,6 +22,7 @@ function responseHandler(data) {
         $("#formErrors")[0].innerHTML = "<p>Invalid username or password</p>";
     }
 }
+
 
 // Wait until page loads.
 document.addEventListener("DOMContentLoaded", function() {
@@ -43,12 +44,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 username: username,
                 password: password
             };
-            /*$.post(
-                "http://localhost:8082/login",
-                request,
-                responseHandler,
-                "json"
-            );*/
             $.ajax({
                 url: 'http://localhost:8082/login',
                 type: 'post',

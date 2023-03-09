@@ -15,7 +15,6 @@ function getCookie(cname) {
 
 if (getCookie("uid") !== ""){
 
-    alert("hi");
     let user = getCookie("username");
 
     document.getElementById("loginOrOut").innerText = "LOGOUT";
