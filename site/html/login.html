@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <link href="../styles/styles_login.css" rel="stylesheet">
+  <script src="../scripts/jquery-3.6.3.js"></script>
+  <script src="../scripts/login.js"></script>
   <meta charset="UTF-8">
   <title>MMMAC Daddies Login</title>
 </head>
@@ -13,8 +15,8 @@
         <ul class="links">
           <li class="logo"><a href="../index.html"><img src="../images/MMMAClogoSmall.png" alt="logo test" style="float: right;"></a></li>
           <li class="page"><a href="shop.html">SHOP</a> </li>
-          <li class="page"><a class="active" href="login.html">LOGIN</a> </li>
-          <li class="page"><a href="join.html">JOIN</a> </li>
+          <li class="page"><a class="active" href="login.html" id="loginOrOut">LOGIN</a> </li>
+          <li class="page"><a href="join.html" id="joinOrUser">JOIN</a> </li>
           <li class="page" style="float:right"><a href="about.html">MMMeet the Team</a> </li>
           <li class="page" style="float:right"><a href="macItems.html">Items</a> </li>
           <li class="page" style="float:right"><a href="events.html">Events</a> </li>
@@ -27,13 +29,13 @@
         Log in!
       </h2>
 
-      <form class="login" action="http://localhost:8082/login" method="post">
+      <form class="login">
         <p><strong>Login</strong></p>
         <label for="username">Username</label>
         <input type="text" placeholder="Enter Username" id="username" name="username" required><br><br>
         <label for="password">Password</label>
         <input type="password" placeholder="Enter Password" id="password" name="password" required><br><br>
-        <button type="submit">Login</button>
+        <button id="login" type="submit">Login</button>
         <br><br>
         <label>
           <input class="remember" type="checkbox" name="remember"> Remember me
