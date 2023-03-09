@@ -81,7 +81,21 @@ h3 {
 /* Navigation Header End */
 
 
-
+/* Main content */
+h3{
+    padding: 10px;
+    border: var(--macPurple);
+    border-bottom-style: dotted;
+    margin-bottom: 40px;
+}
+.content{
+    text-align: center;
+    font-family: "Montserrat", Serif;
+    margin: 5% 7%;
+}
+.note{
+    padding-top: 30px;
+}
 
 
 /* Footer */
@@ -106,6 +120,7 @@ h3 {
     float: left;
 }
 /* Footer End */
+
 
 #page-container {
     position: relative;
