@@ -51,7 +51,7 @@ function queryHandler(res, con, pass) {
     return function(err, result) {
         if (err) {
             // Database query error.
-            console.log(`Database query error: ${err}`);
+            databaseLog(con, `Database query error: ${err}`);
             res.json({status: "error"});
             return;
         }
