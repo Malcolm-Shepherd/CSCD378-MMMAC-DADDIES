@@ -1,12 +1,17 @@
 // Registration API handler.
 
-const bcrypt = require('bcrypt');
-const express = require('express');
-const mysql = require('mysql');
-const router = express.Router();
+const bcrypt  = require("bcrypt");
+const express = require("express");
+const mysql   = require("mysql");
+const router  = express.Router();
+router.post('/', requestHandler);
+module.exports = router;
 
-router.post('/', function(req, res, next) {
-    // Database connection parameters.
+// Handle registration API request.
+function requestHandler(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+
+    // Database connection.
     const con = mysql.createConnection({
         host: "mariadb",
         port: "3306",
@@ -15,72 +20,92 @@ router.post('/', function(req, res, next) {
         database: "sitedb"
     });
 
-    // Get form fields.
-    const firstName = req.body["firstname"];
-    const lastName  = req.body["lastname"];
-    const email     = req.body["email"];
-    const username  = req.body["username"];
-    const password  = req.body["password"];
+    // Connect to database. Handle queries in callback.
+    con.connect(registerUser(req, res, con));
+}
 
-    // Connect c
-    con.connect(function(err) {
+
+// Register a user.
+function registerUser(req, res, con) {
+    return function(err) {
         if (err) {
-            console.log(`Database connection error: ${err.stack}`);
+            // Database connection error.
+            console.log(`Database connection error: ${err}`);
             res.json({status: "error"});
             return;
         }
 
-        // Hash password using bcrypt.
-        bcrypt.hash(password, 10, function(err, hash) {
-            // Password hashing should never fail so throw if it does.
-            if (err) throw err;
+        // Hash password and insert into accounts.
+        const password = req.body['password'];
+        bcrypt.hash(password, 10, insertAccount(req, res, con));
+    };
+}
 
-            // Try to insert username and password into accounts table.
-            const query = "insert into accounts (username, password) values (?, ?);";
-            con.query(
-                query, [username, hash],
-                function(err, result) {
-                    if (err) {
-                        console.log(`Account insertion error: ${err.stack}`);
-                        res.json({status: "error"});
-                        return;
-                    }
-                });
 
-            // Try to insert other user into user table. Is there a better way
-            // to get the user id than to query for it?
-            const query2 = "select user_id from accounts where username=?;";
-            con.query(
-                query2, [username],
-                function(err, result) {
-                    if (err) {
-                        console.log(`uid query error: ${err.stack}`);
-                        res.json({status: "error"});
-                        return;
-                    }
+// Insert a user into the accounts table.
+function insertAccount(req, res, con) {
+    return function(err, hash) {
+        // Password hashing error.
+        if (err) throw err;
 
-                    if (result.length > 0) {
-                        const uid = result[0].user_id;
+        const username = req.body['username'];
 
-                        const query3 = "insert into users values (?, ?, ?, ?);";
-                        con.query(
-                            query3, [uid, firstName, lastName, email],
-                            function(err, result) {
-                                if (err) {
-                                    console.log(`User insertion error: ${err.stack}`);
-                                    res.json({status: "error"});
-                                    return;
-                                }
+        // Insert username and password hash into accounts table.
+        const query = "insert into accounts (username, password) values (?, ?);";
+        con.query(query, [username, hash], (err, result) => {
+            if (err) {
+                // Insertion error.
+                databaseLog(con, `Account insertion error: ${err}`);
+                res.json({status: "error"});
+                return;
+            }
 
-                                // Success
-                                res.json({status: "ok"});
-                            }
-                        );
-                    }
-                }
-            );
+            // Insert other user info into accounts.
+            insertUser(req, res, con);
         });
-    });
-});
+    };
+}
 
-module.exports = router;
+
+// Insert user info into the users table.
+function insertUser(req, res, con) {
+
+    const firstName = req.body["firstname"];
+    const lastName  = req.body["lastname"];
+    const email     = req.body["email"];
+    const username  = req.body["username"];
+
+    const query = "select user_id from accounts where username=?;";
+    con.query(query, [username], (err, result) => {
+        if (err) {
+            databaseLog(con, `uid query error: ${err}`);
+            res.json({status: "error"});
+            return;
+        }
+        if (result.length > 0) {
+            const uid = result[0].user_id;
+            const query2 = "insert into users values (?, ?, ?, ?);";
+            con.query(query2, [uid, firstName, lastName, email],
+                      (err, result) => {
+                          if (err) {
+                              databaseLog(`User insertion error: ${err}`);
+                              res.json({status: "error"});
+                              return;
+                          }
+                          databaseLog(con, `User ${username} registered.`);
+                          res.json({status: "ok"});
+                      });
+        }
+    });
+}
+
+
+// Log a message to the console and insert it into the database.
+function databaseLog(con, message) {
+    console.log(message);
+    const query = "insert into log (message) values (?);";
+    con.query(query, [message], (err) => {
+        if (err)
+            console.log(`Database log error: ${err}`);
+    });
+}
