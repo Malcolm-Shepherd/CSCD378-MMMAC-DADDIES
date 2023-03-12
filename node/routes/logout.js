@@ -17,25 +17,25 @@ function requestHandler(req, res, next) {
         password: "root",
         database: "sitedb"
     });
-    con.connect(logLogout(con, username));
+    con.connect(logLogout(res, con, username));
 }
 
-function logLogout(con, user) {
+function logLogout(res, con, user) {
     return function(err) {
         if (err) {
             console.log(`Database connection error: ${err}`);
+            res.json({status: "error"});
             return;
         }
         const message = `User ${user} logged out.`;
-        databaseLog(con, message);
+        const query = "insert into log (message) values (?);";
+        con.query(query, [message], (err) => {
+            if (err) {
+                console.log(`Database log error: ${err}`);
+                res.json({status: "error"});
+            }
+            console.log(message);
+            res.json({status: "ok"});
+        });
     };
-}
-
-function databaseLog(con, message) {
-    console.log(message);
-    const query = "insert into log (message) values (?);";
-    con.query(query, [message], (err) => {
-        if (err)
-            console.log(`Database log error: ${err}`);
-    });
 }

@@ -8,7 +8,7 @@ function delete_cookie(name) {
 function getCookie(cname) {
     const name = cname + "=";
     const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
+    for(let i = 0; i < ca.length; i++) {
         let c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
@@ -20,28 +20,41 @@ function getCookie(cname) {
     return "";
 }
 
+function logoutHandler(data) {
+    console.log(data);
+    if (data.status == "ok") {
+        delete_cookie("uid");
+        delete_cookie("username");
+        delete_cookie("hash");
+        alert("Logout successful!");
+        window.location.href = "http://localhost:8080";
+    }
+    else {
+        alert("There was an error logging you out.");
+    }
+}
+
 if (getCookie("uid") !== "") {
-    const indexCheck = joinOrUser.href.split("/").length;
     const user = getCookie("username");
     loginOrOut.innerText = "LOGOUT";
     joinOrUser.innerText = user.valueOf();
 
     //Checks if we're in index.html or not
     joinOrUser.href = "html/account.html";
-    if (joinOrUser.href === "http://localhost:8080/html/account.html") {
+    if(joinOrUser.href === "http://localhost:8080/html/html/account.html") {
         joinOrUser.href = "account.html";
     }
 
+    // Replace logout link with API request.
+    loginOrOut.href = "";
     loginOrOut.addEventListener("click", (event) => {
-        delete_cookie("uid");
-        delete_cookie("username");
-        delete_cookie("hash");
+        $.post("http://localhost:8082/logout",
+               {username: user},
+               logoutHandler,
+               "json"
+              );
+        event.preventDefault();
     });
-
-    loginOrOut.href = "index.html";
-    if (loginOrOut.href === "http://localhost:8080/html/index.html") {
-        loginOrOut.href = "../index.html";
-    }
 }
 else {
     loginOrOut.innerText = "LOGIN";
@@ -49,11 +62,11 @@ else {
 
     //Checks if we're in index.html or not
     joinOrUser.href = "html/join.html";
-    if (joinOrUser.href === "http://localhost:8080/html/join.html") {
+    if(joinOrUser.href === "http://localhost:8080/html/html/join.html") {
         joinOrUser.href = "join.html";
     }
     loginOrOut.href = "html/login.html";
-    if (loginOrOut.href === "http://localhost:8080/html/login.html") {
+    if(loginOrOut.href === "http://localhost:8080/html/html/login.html") {
         loginOrOut.href = "login.html";
     }
 }
