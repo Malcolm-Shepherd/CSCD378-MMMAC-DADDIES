@@ -91,6 +91,14 @@ function checkForm() {
 // Handle requests from Node image.
 function responseHandler(data) {
     console.log(data);
+    if (data.status == "ok") {
+        $("#formErrors")[0].innerHTML = "";
+        alert("Registration successful!");
+        window.location.href = "http://localhost:8080";
+    }
+    else {
+        $("#formErrors")[0].innerHTML = "<p>There was an error registering the user.</p>";
+    }
 }
 
 
