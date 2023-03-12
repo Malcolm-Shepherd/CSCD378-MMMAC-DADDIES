@@ -92,6 +92,10 @@ form img {
     background-color: #C3ACD0;
 
 }
+li {
+    display: inline-block;
+    justify-content: center;
+}
 
 /* Footer */
 .footer {
