@@ -27,7 +27,7 @@ if (getCookie("uid") !== ""){
 
     //Checks if we're in index.html or not
     joinOrUser.href = "html/account.html";
-    if(joinOrUser.href === "http://localhost:8080/html/html/account.html") {
+    if(joinOrUser.href.contains("html/html")) {
         joinOrUser.href = "account.html";
     }
     loginOrOut.addEventListener("click",function(event){
@@ -36,7 +36,7 @@ if (getCookie("uid") !== ""){
         delete_cookie("hash");
     });
     loginOrOut.href = "index.html";
-    if(loginOrOut.href === "http://localhost:8080/html/index.html") {
+    if(loginOrOut.href.contains("html")) {
         loginOrOut.href = "../index.html";
     }
 
@@ -48,11 +48,11 @@ else{
 
     //Checks if we're in index.html or not
     joinOrUser.href = "html/join.html";
-    if(joinOrUser.href === "http://localhost:8080/html/html/join.html") {
+    if(joinOrUser.href.contains("html/html")){
         joinOrUser.href = "join.html";
     }
     loginOrOut.href = "html/login.html";
-    if(loginOrOut.href === "http://localhost:8080/html/html/login.html") {
+    if(loginOrOut.href.contains("html/html")) {
         loginOrOut.href = "login.html";
     }
 }
