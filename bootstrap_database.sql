@@ -56,4 +56,24 @@ values ("root", "$2a$10$kE9qg/GLYf8AALD7gn7/9uua2LAwDOsGTd67pPzI6eGRj3iOz1wGu");
 
 -- user "testuser" password "testpass"
 insert into accounts (username, password)
-values ("testuser", "$2a$10$jARaZ.Q/Gq24itrkWFpSnuJyxcyclDM0CaoSjzd9oNZR4ZwSZEbUm")
+values ("testuser", "$2a$10$jARaZ.Q/Gq24itrkWFpSnuJyxcyclDM0CaoSjzd9oNZR4ZwSZEbUm");
+
+insert into events (name, short_desc, start_time, end_time)
+values ("1st MMMAC Conference",
+        "Meet members and help guide the future! (not April Fools!)",
+        "2023-04-01 10:00:00", "2023-04-01 14:00:00");
+
+insert into events(name, short_desc, start_time, end_time)
+values ("1st MAC Donation Drive",
+        "Donate old MAC items here!",
+        "2023-03-24 12:00:00", "2023-03-24 18:00:00");
+
+insert into events(name, short_desc, start_time, end_time)
+values ("Macaque Showcase",
+        "We have like 8 of these guys.",
+        "2023-04-10 08:00:00", "2023-04-10 15:00:00");
+
+insert into events(name, short_desc, start_time, end_time)
+values ("Macintosh giveaway",
+        "The fruit, not the computer.",
+        "2023-04-23 11:00:00", "2023-04-23 15:00:00");
