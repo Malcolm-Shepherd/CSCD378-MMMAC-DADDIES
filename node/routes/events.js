@@ -40,7 +40,7 @@ function getEvents(res, con) {
             }
             if (result.length > 0) {
                 console.log(result);
-                res.json({status: "ok"});
+                res.json({status: "ok", data: result});
             }
         });
     };

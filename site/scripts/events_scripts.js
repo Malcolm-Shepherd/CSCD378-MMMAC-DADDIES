@@ -1,9 +1,17 @@
-// This file will be used to display logging and how many users have visited the sites
-// The content from this file will only be visible and added to the HTML if the user is an admin
+// This file will be used to display logging and how many users have visited the
+// sites The content from this file will only be visible and added to the HTML
+// if the user is an admin
+
+function responseHandler(data) {
+    console.log(data);
+}
 
 // if user == admin
 window.onload = function () {
-
+    $.post("http://localhost:8082/events",
+           {},
+           responseHandler,
+           "json");
 
     const adminInfo = document.getElementById("adminOnlyEventInfo");
 
