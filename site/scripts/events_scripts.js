@@ -1,9 +1,32 @@
-// This file will be used to display logging and how many users have visited the sites
-// The content from this file will only be visible and added to the HTML if the user is an admin
+// This file will be used to display logging and how many users have visited the
+// sites The content from this file will only be visible and added to the HTML
+// if the user is an admin
+
+function responseHandler(data) {
+    console.log(data);
+}
+
+function getCookie(cname) {
+    const name = cname + "=";
+    const ca = document.cookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 
 // if user == admin
 window.onload = function () {
-
+    $.post("http://localhost:8082/events",
+           {},
+           responseHandler,
+           "json");
 
     const adminInfo = document.getElementById("adminOnlyEventInfo");
 
