@@ -77,3 +77,6 @@ insert into events(name, short_desc, start_time, end_time)
 values ("Macintosh giveaway",
         "The fruit, not the computer.",
         "2023-04-23 11:00:00", "2023-04-23 15:00:00");
+INSERT INTO `items` (`item_id`, `name`, `short_desc`, `image`, `price`, `stock`)
+VALUES (1, 'MacItem1', 'Mac and Cheese', 'MacAndCheese', 2.00, 3),
+    (2, 'MacItem2', 'Mac and Cheese', 'MacShirt', 2.00, 1);
