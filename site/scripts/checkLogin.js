@@ -41,7 +41,7 @@ if (getCookie("uid") !== "") {
 
     //Checks if we're in index.html or not
     joinOrUser.href = "html/account.html";
-    if(joinOrUser.href.contains("html/html")) {
+    if(joinOrUser.href.includes("html/html")) {
         joinOrUser.href = "account.html";
     }
 
@@ -62,11 +62,11 @@ else {
 
     //Checks if we're in index.html or not
     joinOrUser.href = "html/join.html";
-    if(joinOrUser.href.contains("html/html")){
+    if(joinOrUser.href.includes("html/html")){
         joinOrUser.href = "join.html";
     }
     loginOrOut.href = "html/login.html";
-    if(loginOrOut.href.contains("html/html")) {
+    if(loginOrOut.href.includes("html/html")) {
         loginOrOut.href = "login.html";
     }
 }
