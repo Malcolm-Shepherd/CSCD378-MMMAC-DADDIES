@@ -4,11 +4,18 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const mysql = require('mysql');
 const router = express.Router();
+router.post('/', requestHandler);
+module.exports = router;
 
-router.post('/', function(req, res, next) {
-    // Connect to database.  I thought it would be nice to define con at the top
-    // of the file, but more than one login request does not work unless it is
-    // defined here. Hell if I know why that is.
+// Handle an API request.
+function requestHandler(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+
+    // Get request fields.
+    const req_user = req.body["username"];
+    const req_pass = req.body["password"];
+
+    // Database connection.
     const con = mysql.createConnection({
         host: "mariadb",
         port: "3306",
@@ -17,64 +24,77 @@ router.post('/', function(req, res, next) {
         database: "sitedb"
     });
 
-    // Get request fields.
-    const req_user = req.body["username"];
-    const req_pass = req.body["password"];
+    // Connect to database. Handle queries in callback.
+    con.connect(verifyUser(res, con, req_user, req_pass));
+}
 
-    // Connect to database.
-    con.connect(function(err) {
+
+// Verify user credentials.
+function verifyUser(res, con, user, pass) {
+    return function(err) {
         if (err) {
-            console.log(`Database connection error: ${err.stack}`);
+            // Database connection error.
+            console.log(`Database connection error: ${err}`);
+            res.json({status: "error"});
             return;
         }
 
-        // Query for user.
+        // Query for user. Handle response in callback.
         const query = "select * from accounts where username=?;";
-        con.query(
-            query, [req_user],
-            function(err, result) {
-                if (err) {
-                    console.log(`Database query error: ${err.stack}`);
-                    return;
-                }
+        con.query(query, [user], queryHandler(res, con, pass));
+    };
+}
 
-                // Verify that we received some result.
-                if (result.length > 0) {
 
-                    // Get query fields.
-                    const uid      = result[0].user_id;
-                    const username = result[0].username;
-                    const hash     = result[0].password;
+// Handle query response. Verify password.
+function queryHandler(res, con, pass) {
+    return function(err, result) {
+        if (err) {
+            // Database query error.
+            databaseLog(con, `Database query error: ${err}`);
+            res.json({status: "error"});
+            return;
+        }
 
-                    // Verify password hash.
-                    bcrypt.compare(
-                        req_pass, hash,
-                        function(err, success) {
-                            // Password hashing should never fail, so throw if it does.
-                            if (err) throw err;
-                            if (success) {
-                                // Verification successful!
-                                console.log("Login Success!");
-                                res.header("Access-Control-Allow-Origin", "*");
-                                res.json({
-                                    status: "ok",
-                                    uid: uid,
-                                    username: username,
-                                    hash: hash
-                                });
-                            }
-                            else
-                                // Bad password.
-                                res.json({status: "badpass"});
-                        }
-                    );
+        // Verify that we received a result.
+        if (result.length > 0) {
+            // Get query fields.
+            const uid      = result[0].user_id;
+            const username = result[0].username;
+            const hash     = result[0].password;
+
+            // Verify password hash.
+            bcrypt.compare(pass, hash, (err, success) => {
+                if (err) throw err;
+                if (success) {
+                    // Verification successful!
+                    databaseLog(con, `User ${username} login success.`);
+                    res.json({
+                        status: "ok",
+                        uid: uid,
+                        username: username,
+                        hash: hash
+                    });
                 }
                 else {
-                    // No result, username is invalid.
-                    res.json({status: "baduser"});
+                    // Bad password.
+                    res.json({status: "badpass"});
                 }
             });
-    });
-});
+        }
+        else {
+            // Bad username.
+            res.json({status: "baduser"});
+        }
+    };
+}
 
-module.exports = router;
+
+function databaseLog(con, message) {
+    console.log(message);
+    const query = "insert into log (message) values (?);";
+    con.query(query, [message], (err) => {
+        if (err)
+            console.log(`Database log error: ${err}`);
+    });
+}

@@ -44,6 +44,12 @@ create table attendance (
     constraint pk_attendance primary key (user_id, event_id)
 );
 
+create table log (
+    time    timestamp default current_timestamp,
+    message varchar(500),
+    primary key (time)
+);
+
 -- user "root" password "root"
 insert into accounts (username, password)
 values ("root", "$2a$10$kE9qg/GLYf8AALD7gn7/9uua2LAwDOsGTd67pPzI6eGRj3iOz1wGu");

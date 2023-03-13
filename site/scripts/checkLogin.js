@@ -1,11 +1,13 @@
-let loginOrOut = document.getElementById("loginOrOut");
-let joinOrUser = document.getElementById("joinOrUser");
+const loginOrOut = document.getElementById("loginOrOut");
+const joinOrUser = document.getElementById("joinOrUser");
+
 function delete_cookie(name) {
     document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
+
 function getCookie(cname) {
-    let name = cname + "=";
-    let ca = document.cookie.split(';');
+    const name = cname + "=";
+    const ca = document.cookie.split(';');
     for(let i = 0; i < ca.length; i++) {
         let c = ca[i];
         while (c.charAt(0) == ' ') {
@@ -18,10 +20,22 @@ function getCookie(cname) {
     return "";
 }
 
-if (getCookie("uid") !== ""){
+function logoutHandler(data) {
+    console.log(data);
+    if (data.status == "ok") {
+        delete_cookie("uid");
+        delete_cookie("username");
+        delete_cookie("hash");
+        alert("Logout successful!");
+        window.location.href = "http://localhost:8080";
+    }
+    else {
+        alert("There was an error logging you out.");
+    }
+}
 
-    let indexCheck = joinOrUser.href.split("/").length;
-    let user = getCookie("username");
+if (getCookie("uid") !== "") {
+    const user = getCookie("username");
     loginOrOut.innerText = "LOGOUT";
     joinOrUser.innerText = user.valueOf();
 
@@ -30,19 +44,19 @@ if (getCookie("uid") !== ""){
     if(joinOrUser.href.contains("html/html")) {
         joinOrUser.href = "account.html";
     }
-    loginOrOut.addEventListener("click",function(event){
-        delete_cookie("uid");
-        delete_cookie("username");
-        delete_cookie("hash");
+
+    // Replace logout link with API request.
+    loginOrOut.href = "";
+    loginOrOut.addEventListener("click", (event) => {
+        $.post("http://localhost:8082/logout",
+               {username: user},
+               logoutHandler,
+               "json"
+              );
+        event.preventDefault();
     });
-    loginOrOut.href = "index.html";
-    if(loginOrOut.href.contains("html")) {
-        loginOrOut.href = "../index.html";
-    }
-
-
 }
-else{
+else {
     loginOrOut.innerText = "LOGIN";
     joinOrUser.innerText = "JOIN";
 
@@ -56,4 +70,3 @@ else{
         loginOrOut.href = "login.html";
     }
 }
-
