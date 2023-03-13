@@ -7,10 +7,11 @@ window.onload = function () {
 
     const adminInfo = document.getElementById("adminOnlyEventInfo");
 
-    if (1 === 2) { // Will change to if userID == adminID
+    if (getCookie("uid") == "1") {  // Will change to if userID == adminID
         const p = document.createElement("p");
+        let userCount = 5;
         // Will use variable that includes users visited when logging is implemented.
-        p.textContent = "ADMIN ONLY,  Page visited by " + " Users";
+        p.textContent = "ADMIN ONLY,  Page visited by " + userCount + " Users";
         adminInfo.appendChild(p);
     }
 }
