@@ -86,6 +86,7 @@ h3 {
     object-fit: scale-down;
     display: flex;
     flex-shrink: 0;
+    margin-top: 60px;
 
 }
 .right{
@@ -97,7 +98,7 @@ h3 {
 
 }
 .left{
-    margin-left: 70px;
+    margin-left: 80px;
     width: 50%;
 }
 
