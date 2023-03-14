@@ -4,6 +4,10 @@
 
 function responseHandler(data) {
     console.log(data);
+    $eventNames = $(".headerfont");
+    for (let i = 0; i < Math.min($eventNames.length, data.data.length); i++) {
+        $eventNames[i].innerHTML = data.data[i].name;
+    }
 }
 
 function getCookie(cname) {
@@ -22,7 +26,7 @@ function getCookie(cname) {
 }
 
 // if user == admin
-window.onload = function () {
+$(document).ready(function() {
     $.post("http://localhost:8082/events",
            {},
            responseHandler,
@@ -37,4 +41,4 @@ window.onload = function () {
         p.textContent = "ADMIN ONLY,  Page visited by " + userCount + " Users";
         adminInfo.appendChild(p);
     }
-}
+});
