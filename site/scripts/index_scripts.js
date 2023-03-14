@@ -34,6 +34,8 @@ $(document).ready(function() {
     if (getCookie("uid") !== "") {
         console.log("Hello, world!");
         $(".button").text("Donate");
+        $("#together").text("Welcome Back");
         $(".button").attr("href", "http://localhost:8080/html/donate.html");
     }
+
 });
