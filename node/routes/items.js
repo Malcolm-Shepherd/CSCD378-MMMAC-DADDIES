@@ -8,9 +8,9 @@ module.exports = router;
 
 // Handle events API request.
 function requestHandler(req, res, next) {
-    console.log("Adopting");
     res.header("Access-Control-Allow-Origin", "*");
     const itemID = req.body["itemID"];
+    const user = req.body["username"];
     // Database connection.
     const con = mysql.createConnection({
         host: "mariadb",
@@ -21,10 +21,10 @@ function requestHandler(req, res, next) {
     });
 
     // Connect to database. Handle queries in callback.
-    con.connect(getItem(res, con, itemID));
+    con.connect(getItem(res, con, itemID, user));
 }
 
-function getItem(res, con, itemID) {
+function getItem(res, con, itemID, user) {
     return function(err) {
         if (err) {
             console.log(`Database connection error: ${err}`);
@@ -47,6 +47,7 @@ function getItem(res, con, itemID) {
                         if (err) throw err;
                         console.log(result.affectedRows + " record(s) updated");
                     });
+                    databaseLog(con, `1 ${result[0].name} adopted by user ${user}.`)
                     res.json({
                         status: "ok",
                         stock: newStock,
@@ -63,4 +64,13 @@ function getItem(res, con, itemID) {
             }
         });
     };
+}
+
+function databaseLog(con, message) {
+    console.log(message);
+    const query = "insert into log (message) values (?);";
+    con.query(query, [message], (err) => {
+        if (err)
+            console.log(`Database log error: ${err}`);
+    });
 }
