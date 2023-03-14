@@ -25,7 +25,7 @@ h2 {
     padding: 30px;
 }
 h3 {
-    font-size: x-large;
+    font-size: 50px;
 }
 .macBackground {
     width: 500pc;
@@ -101,7 +101,14 @@ h3 {
     margin-left: 80px;
     width: 50%;
 }
+.left p{
+    font-size: 20px;
+}
+.left li{
+    font-size: 20px;
+    padding: 5px;
 
+}
 form {
     border: 3px solid var(--macPurple);
     border-radius: 20px;
