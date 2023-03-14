@@ -8,9 +8,10 @@ module.exports = router;
 
 // Handle events API request.
 function requestHandler(req, res, next) {
-    console.log("Adopting");
+    console.log("Update Starting");
     res.header("Access-Control-Allow-Origin", "*");
     const itemID = req.body["itemID"];
+    const stock = req.body["stock"];
     // Database connection.
     const con = mysql.createConnection({
         host: "mariadb",
@@ -19,12 +20,11 @@ function requestHandler(req, res, next) {
         password: "root",
         database: "sitedb"
     });
-
     // Connect to database. Handle queries in callback.
-    con.connect(getItem(res, con, itemID));
+    con.connect(updateItem(res, con, itemID, stock));
 }
 
-function getItem(res, con, itemID) {
+function updateItem(res, con, itemID, stock) {
     return function(err) {
         if (err) {
             console.log(`Database connection error: ${err}`);
@@ -40,26 +40,17 @@ function getItem(res, con, itemID) {
                 return;
             }
             if (result.length > 0) {
-                if(result[0].stock > 0) {
-                    const newStock = result[0].stock-1;
-                    var update = `UPDATE items SET stock=${newStock} WHERE item_id=${itemID}`;
-                    con.query(update, function (err, result) {
-                        if (err) throw err;
-                        console.log(result.affectedRows + " record(s) updated");
-                    });
-                    res.json({
-                        status: "ok",
-                        stock: newStock,
-                        name: result[0].name
-                    });
-                }
-                else{
-                    res.json({
-                        status: "ok",
-                        stock: "-1",
-                        name: result[0].name
-                    });
-                }
+                const update = `UPDATE items SET stock=${stock} WHERE item_id=${itemID}`;
+                con.query(update, function (err, result) {
+                    if (err) throw err;
+                    console.log(result.affectedRows + " record(s) updated");
+                });
+                res.json({
+                    status: "ok",
+                    oldStock: result[0].stock,
+                    stock: stock,
+                    name: result[0].name
+                });
             }
         });
     };

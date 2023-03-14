@@ -40,6 +40,11 @@
                         <label for="item1Adopt">Adopt</label><br>
                         <button id="item1Button" type="submit">Submit</button>
                     </form>
+                    <form id="admin1" hidden>
+                        <label for="stock1"> Set Stock</label>
+                        <input type="text" id="stock1">
+                        <button id="admin1Button" type="submit">Update</button>
+                    </form>
                 </li>
                 <li>
                     <form id="item2Form">
@@ -50,6 +55,11 @@
                         <input type="radio" id="item2Adopt" name="AdoptableItem2" value="adoptItem2">
                         <label for="item2Adopt">Adopt</label><br>
                         <button id="item2Button" type="submit">Submit</button>
+                    </form>
+                    <form id="admin2" hidden>
+                        <label for="stock2"> Set Stock</label>
+                        <input type="text" id="stock2">
+                        <button id="admin2Button" type="submit">Update</button>
                     </form>
                 </li>
             </ul>
@@ -69,4 +79,5 @@
 </body>
 <script src="../scripts/checkLogin.js"></script>
 <script src="../scripts/items.js"></script>
+<script src="../scripts/adminItems.js"></script>
 </html>
