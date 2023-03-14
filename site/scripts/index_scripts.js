@@ -31,9 +31,9 @@ $workingTogether.ready(function() {
 $(document).ready(function() {
     const $joinOrDonate = $("#joinOrDonate");
     if (getCookie("uid") !== "") {
-        console.log("Hello, world!");
+        const username = getCookie("username");
         $(".button").text("Donate");
-        $("#together").text("Welcome Back");
+        $("#together").text(`Welcome Back, ${username}!`);
         $(".button").attr("href", "http://localhost:8080/html/donate.html");
     }
 
