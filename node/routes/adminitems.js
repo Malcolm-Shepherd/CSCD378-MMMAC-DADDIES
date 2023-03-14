@@ -45,6 +45,7 @@ function updateItem(res, con, itemID, stock) {
                     if (err) throw err;
                     console.log(result.affectedRows + " record(s) updated");
                 });
+                databaseLog(con, `Updated ${result[0].name}'s stock from ${result[0].stock} to ${stock}.`)
                 res.json({
                     status: "ok",
                     oldStock: result[0].stock,
@@ -54,4 +55,12 @@ function updateItem(res, con, itemID, stock) {
             }
         });
     };
+}
+function databaseLog(con, message) {
+    console.log(message);
+    const query = "insert into log (message) values (?);";
+    con.query(query, [message], (err) => {
+        if (err)
+            console.log(`Database log error: ${err}`);
+    });
 }
