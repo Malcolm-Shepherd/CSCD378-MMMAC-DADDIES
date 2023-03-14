@@ -13,24 +13,23 @@ function getCookie(cname) {
     return "";
 }
 
+const $slideshow = $(".cycle-slideshow");
+const $workingTogether = $(".together");
+$slideshow.ready(function() {
+    if ($slideshow.is(".cycle-paused"))
+        $slideshow.cycle("resume");
+    else
+        $slideshow.cycle("pause");
+});
+
+$workingTogether.ready(function() {
+    $("#together").fadeIn(3000);
+    $("#workingTogether").fadeIn(4500);
+    $(".button").fadeIn(5500);
+});
+
 $(document).ready(function() {
-    const $slideshow = $(".cycle-slideshow");
-    const $workingTogether = $(".together");
     const $joinOrDonate = $("#joinOrDonate");
-
-    $slideshow.ready(function() {
-        if ($slideshow.is(".cycle-paused"))
-            $slideshow.cycle("resume");
-        else
-            $slideshow.cycle("pause");
-    });
-
-    $workingTogether.ready(function() {
-        $("#together").fadeIn(3000);
-        $("#workingTogether").fadeIn(4500);
-        $(".button").fadeIn(5500);
-    });
-
     if (getCookie("uid") !== "") {
         console.log("Hello, world!");
         $(".button").text("Donate");
