@@ -84,7 +84,7 @@ h3 {
 form {
     border: 3px solid var(--macPurple);
     border-radius: 20px;
-    margin: 0 35%;
+    margin: 120px 35% 0;
     padding: 30px 0;
     background-color: var(--macLavender);
 }
