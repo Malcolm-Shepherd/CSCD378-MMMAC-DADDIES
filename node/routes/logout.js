@@ -1,6 +1,5 @@
 // Logout event logging.
 
-const bcrypt = require('bcrypt');
 const express = require('express');
 const mysql = require('mysql');
 const router = express.Router();
