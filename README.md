@@ -16,6 +16,7 @@ CSCD378 Final Project
      and import `bootstrap_database.sql` to set up the initial site database.
 
 ## Documents
+Final Documentation found here in root directory or on the Google Doc link below.
 ## PDF alternatives can be found in the Documents folder
 
 ### Site Research
