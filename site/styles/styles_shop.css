@@ -188,8 +188,9 @@ a:active {
     padding: 0 0 30px 0;
 }
 .banner {
-    background-image: url("../images/macintoshBW.jpeg");
+    background-image: url("../images/macintoshBW(fixed).png");
     background-position: center;
+    background-size: cover;
     padding: 20px 150px 200px 150px;
     margin: 10px 0;
     color: var(--macWhite);
