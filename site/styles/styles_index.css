@@ -170,6 +170,27 @@ p {
 .mission{
     padding-bottom: 100px;
 }
+
+.donate{
+    padding-bottom: 120px;
+    text-align: center;
+}
+
+.DonateButton{
+    font: bold 40px 'Montserrat';
+    text-decoration: none;
+    background-color: var(--macPurple);
+    color: var(--macWhite);
+    padding: 25px 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 0 20%;
+}
+.DonateButton:hover{
+    opacity: 0.8;
+}
+
 .involved{
     object-fit: scale-down;
     display: flex;
@@ -198,6 +219,9 @@ p {
     color: var(--macWhite);
     padding: 10px 60px;
     border-radius: 10px;
+}
+.EventButton:hover{
+    opacity: 0.8;
 }
 
 
